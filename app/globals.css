@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #F5F1EC;
+  --color-lighttan: #DBCFC4;
+  --color-tan: #C4B5A4;
+  --color-warmbrown: #A1866F;
+  --color-charcoal: #3D3A34;
+  --color-nearblack: #272321;
+  --color-eranavy: #1A3A7E;
+  --color-erared: #C8102E;
+  --color-paper: #FBF8F3;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-charcoal);
+  font-feature-settings: "kern", "liga", "calt";
+}
+
+::selection {
+  background-color: var(--color-warmbrown);
+  color: var(--color-paper);
+}
+
+.font-display {
+  font-feature-settings: "lnum", "kern";
+  font-optical-sizing: auto;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 0.72rem;
+  color: var(--color-charcoal);
+  opacity: 0.7;
+}
+
+.script {
+  font-family: var(--font-script), "Parisienne", cursive;
+  font-weight: 400;
+}
+
+/* Editorial prose for blog reading */
+.prose-editorial p {
+  margin-bottom: 1.4em;
+  line-height: 1.85;
+  font-size: 1.0625rem;
+  color: var(--color-charcoal);
+}
+
+.prose-editorial p:first-of-type::first-letter {
+  font-family: var(--font-display), "Vidaloka", "Playfair Display", serif;
+  font-size: 3.6rem;
+  float: left;
+  line-height: 0.9;
+  margin: 0.18em 0.18em 0 0;
+  color: var(--color-warmbrown);
+  font-weight: 400;
+}
+
+.prose-editorial ul {
+  margin: 1.4em 0;
+  padding-left: 1.25rem;
+  list-style: none;
+}
+
+.prose-editorial ul li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: 0.55em;
+  line-height: 1.7;
+}
+
+.prose-editorial ul li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  width: 0.5rem;
+  height: 1px;
+  background: var(--color-warmbrown);
+}
+
+.prose-editorial h2 {
+  font-family: var(--font-display), "Vidaloka", "Playfair Display", serif;
+  font-size: 1.75rem;
+  margin-top: 2.5em;
+  margin-bottom: 0.75em;
+  color: var(--color-warmbrown);
+  letter-spacing: -0.01em;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  padding-bottom: 2px;
+  transition: background-size 400ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.link-underline:hover {
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+}
