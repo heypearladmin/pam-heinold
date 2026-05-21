@@ -116,9 +116,25 @@ export default function Footer() {
             © {new Date().getFullYear()} Pamela Heinold · ERA American Real
             Estate · Independently owned & operated
           </p>
-          <p className="tracking-editorial uppercase">
-            Pensacola, Florida — every street, by name.
-          </p>
+          <ul className="flex flex-wrap gap-x-6 gap-y-2 tracking-editorial uppercase">
+            <li>
+              <Link
+                href="/terms"
+                className="hover:text-tan transition-colors duration-300"
+              >
+                Terms
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/policies"
+                className="hover:text-tan transition-colors duration-300"
+              >
+                Privacy
+              </Link>
+            </li>
+            <li>Pensacola, Florida — every street, by name.</li>
+          </ul>
         </div>
       </div>
     </footer>
