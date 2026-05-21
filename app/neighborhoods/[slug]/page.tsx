@@ -4,6 +4,9 @@ import { notFound } from "next/navigation";
 import CTASection from "@/components/CTASection";
 import NeighborhoodCard from "@/components/NeighborhoodCard";
 import { neighborhoods, getNeighborhoodBySlug } from "@/lib/neighborhood-data";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { neighborhoodPageSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { site } from "@/lib/site";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -36,20 +39,12 @@ export default async function NeighborhoodDetailPage({ params }: PageProps) {
 
   const others = neighborhoods.filter((x) => x.slug !== n.slug).slice(0, 3);
 
-  const placeSchema = {
-    "@context": "https://schema.org",
-    "@type": "Place",
-    name: `${n.name}, Pensacola, FL`,
-    description: n.shortDescription,
-    image: n.image,
-  };
+  const pageUrl = `${site.company.website}/neighborhoods/${n.slug}`;
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(placeSchema) }}
-      />
+      <JsonLd schema={neighborhoodPageSchema({ title: `${n.name} — A Pensacola Neighborhood Guide`, description: n.shortDescription, url: pageUrl, image: n.image })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Neighborhoods", url: `${site.company.website}/neighborhoods` }, { name: n.name, url: pageUrl }])} />
 
       {/* Hero */}
       <section className="relative w-full min-h-[80vh] flex items-end overflow-hidden">

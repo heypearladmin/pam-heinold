@@ -1,6 +1,9 @@
 import BlogCard from "@/components/BlogCard";
 import CTASection from "@/components/CTASection";
 import { blogPosts } from "@/lib/blog-data";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schema";
+import { site } from "@/lib/site";
 
 export const metadata = {
   title: "Notes — Friendly Pensacola Real Estate Thoughts",
@@ -14,6 +17,7 @@ export default function BlogIndexPage() {
 
   return (
     <>
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Notes", url: `${site.company.website}/blog` }])} />
       <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10">
           <p className="eyebrow text-charcoal/60 mb-6">Notes</p>

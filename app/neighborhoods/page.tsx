@@ -1,6 +1,9 @@
 import NeighborhoodCard from "@/components/NeighborhoodCard";
 import CTASection from "@/components/CTASection";
 import { neighborhoods } from "@/lib/neighborhood-data";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { breadcrumbSchema } from "@/lib/seo/schema";
+import { site } from "@/lib/site";
 
 export const metadata = {
   title: "Pensacola Neighborhoods — A Hyperlocal Guide",
@@ -12,6 +15,7 @@ export const metadata = {
 export default function NeighborhoodsIndexPage() {
   return (
     <>
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Neighborhoods", url: `${site.company.website}/neighborhoods` }])} />
       <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10">
           <p className="eyebrow text-charcoal/60 mb-6">Pensacola Neighborhoods</p>

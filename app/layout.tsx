@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Vidaloka, Parisienne, Montserrat } from "next/font/google";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { realEstateAgentSchema, webSiteSchema, personSchema } from "@/lib/seo/schema";
 import "./globals.css";
 
 const display = Vidaloka({
@@ -55,12 +56,21 @@ export const metadata: Metadata = {
     title: "Let's find the place that feels like home.",
     description:
       "A warm, refined approach to Pensacola luxury real estate. 22 years of hyperlocal expertise from Marcus Pointe to the Gulf.",
+    images: [
+      {
+        url: "/hero-pensacola.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Pensacola Gulf Coast waterfront — Pam Heinold Real Estate",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pam Heinold | Pensacola Real Estate",
     description:
       "Cozy. Elegant. Relatable. 22 years of Pensacola real estate experience.",
+    images: ["/hero-pensacola.jpg"],
   },
   robots: {
     index: true,
@@ -84,6 +94,18 @@ export default function RootLayout({
       lang="en"
       className={`${display.variable} ${script.variable} ${sans.variable}`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              realEstateAgentSchema(),
+              webSiteSchema(),
+              personSchema(),
+            ]),
+          }}
+        />
+      </head>
       <body className="font-sans bg-paper text-charcoal antialiased">
         <Navbar />
         <main>{children}</main>

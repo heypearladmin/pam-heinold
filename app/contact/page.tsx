@@ -1,5 +1,7 @@
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -12,29 +14,10 @@ export const metadata = {
 export default function ContactPage() {
   const { company, social, agent } = site;
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "RealEstateAgent",
-    name: `${agent.fullName} — ${company.name}`,
-    image: agent.headshot,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Pensacola",
-      addressRegion: "FL",
-      addressCountry: "US",
-    },
-    telephone: company.phone,
-    email: company.email,
-    url: company.website,
-    sameAs: [social.facebook, social.instagram, social.linkedin, social.youtube],
-  };
-
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <JsonLd schema={localBusinessSchema()} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: company.website }, { name: "Contact", url: `${company.website}/contact` }])} />
 
       <section className="pt-40 pb-20 md:pt-48 md:pb-28 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12 md:gap-20 items-start">

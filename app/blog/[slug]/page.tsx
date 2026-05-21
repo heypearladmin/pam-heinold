@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import BlogCard from "@/components/BlogCard";
 import { blogPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog-data";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { blogPostingSchema, breadcrumbSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 
 interface Props {
@@ -56,32 +58,12 @@ export default async function BlogPostPage({ params }: Props) {
 
   const related = getRelatedPosts(post.slug, 3);
 
-  const articleSchema = {
-    "@context": "https://schema.org",
-    "@type": "Article",
-    headline: post.title,
-    description: post.excerpt,
-    image: post.image,
-    datePublished: post.publishedAt,
-    author: {
-      "@type": "Person",
-      name: "Pamela Heinold",
-      url: "https://pamheinold.com/about",
-    },
-    publisher: {
-      "@type": "Organization",
-      name: "ERA American Real Estate",
-      url: "https://pamheinold.com",
-    },
-    mainEntityOfPage: `https://pamheinold.com/blog/${post.slug}`,
-  };
+  const pageUrl = `${site.company.website}/blog/${post.slug}`;
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
-      />
+      <JsonLd schema={blogPostingSchema({ title: post.title, description: post.excerpt, url: pageUrl, image: post.image, datePublished: post.publishedAt })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Notes", url: `${site.company.website}/blog` }, { name: post.title, url: pageUrl }])} />
 
       {/* Title block */}
       <section className="pt-32 md:pt-40 bg-paper">
