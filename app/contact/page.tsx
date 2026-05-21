@@ -1,4 +1,5 @@
 import Image from "next/image";
+import ContactForm from "@/components/ContactForm";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -172,60 +173,7 @@ export default function ContactPage() {
             and respond within one business day.
           </p>
 
-          <form className="mt-14 grid gap-6" aria-label="Contact form">
-            <div className="grid sm:grid-cols-2 gap-6">
-              <label className="block">
-                <span className="eyebrow text-charcoal/60 block mb-2">
-                  Name
-                </span>
-                <input
-                  type="text"
-                  name="name"
-                  className="w-full bg-transparent border-b border-warmbrown/40 py-3 text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-warmbrown transition-colors duration-300"
-                  placeholder="Your name"
-                />
-              </label>
-              <label className="block">
-                <span className="eyebrow text-charcoal/60 block mb-2">
-                  Email
-                </span>
-                <input
-                  type="email"
-                  name="email"
-                  className="w-full bg-transparent border-b border-warmbrown/40 py-3 text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-warmbrown transition-colors duration-300"
-                  placeholder="you@email.com"
-                />
-              </label>
-            </div>
-            <label className="block">
-              <span className="eyebrow text-charcoal/60 block mb-2">Phone</span>
-              <input
-                type="tel"
-                name="phone"
-                className="w-full bg-transparent border-b border-warmbrown/40 py-3 text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-warmbrown transition-colors duration-300"
-                placeholder="Optional"
-              />
-            </label>
-            <label className="block">
-              <span className="eyebrow text-charcoal/60 block mb-2">
-                What&apos;s on your mind
-              </span>
-              <textarea
-                name="message"
-                rows={5}
-                className="w-full bg-transparent border-b border-warmbrown/40 py-3 text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-warmbrown transition-colors duration-300 resize-none"
-                placeholder="A few sentences is plenty."
-              />
-            </label>
-            <div className="pt-4">
-              <button
-                type="submit"
-                className="inline-block bg-warmbrown text-cream px-7 py-3.5 text-[0.78rem] tracking-wider uppercase hover:bg-nearblack transition-colors duration-300"
-              >
-                Send Note
-              </button>
-            </div>
-          </form>
+          <ContactForm />
         </div>
       </section>
     </>

@@ -40,4 +40,26 @@ export const site = {
     { label: "Notes", href: "/blog" },
     { label: "Contact", href: "/contact" },
   ],
+  /**
+   * A2P 10DLC / GoHighLevel AI-dialer compliance copy.
+   * Edit the brand string here and every consent surface updates in lockstep —
+   * carrier reviewers reject campaigns whose disclosures drift across pages.
+   */
+  legal: {
+    brand: "ERA American Real Estate",
+    effectiveDate: "January 1, 2026",
+    consentVersion: "2026-01-A",
+    sms: {
+      // EXACT required language. Do not rewrite — carrier audits grep for this string.
+      primary:
+        "I agree to receive text messages and phone calls from ERA American Real Estate at the phone number provided. Message frequency varies. Message & data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. By submitting this form, you agree to our Terms & Conditions and Privacy Policy.",
+      ai:
+        "By providing your phone number, you consent to receive calls and text messages, including automated calls and AI-assisted communications, from ERA American Real Estate.",
+    },
+    privacy: {
+      // EXACT required clause for /policies — must appear verbatim for 10DLC approval.
+      mobileSharingClause:
+        "No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.",
+    },
+  },
 };
