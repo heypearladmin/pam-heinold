@@ -3,6 +3,9 @@ import Link from "next/link";
 import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { serviceSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { site } from "@/lib/site";
 
 export const metadata = {
   title: "Pensacola Relocation Guidance",
@@ -14,6 +17,8 @@ export const metadata = {
 export default function RelocationPage() {
   return (
     <>
+      <JsonLd schema={serviceSchema({ name: "Pensacola Relocation Guidance", url: `${site.company.website}/relocation`, description: "22 years guiding families and luxury buyers through Pensacola relocation. Hyperlocal neighborhood matching, school guidance, and Gulf Coast market expertise." })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Relocation", url: `${site.company.website}/relocation` }])} />
       <Hero
         eyebrow="Relocating to Pensacola"
         headline="The Gulf is patient."

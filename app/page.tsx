@@ -6,8 +6,10 @@ import BlogCard from "@/components/BlogCard";
 import NeighborhoodCard from "@/components/NeighborhoodCard";
 import CTASection from "@/components/CTASection";
 import { blogPosts } from "@/lib/blog-data";
-import { neighborhoods } from "@/lib/neighborhood-data";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
+import { neighborhoods } from "@/lib/neighborhood-data";
 
 export const metadata = {
   title: "Pam Heinold — Pensacola Real Estate Authority",
@@ -22,6 +24,8 @@ export default function HomePage() {
 
   return (
     <>
+      <JsonLd schema={localBusinessSchema()} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }])} />
       <Hero
         eyebrow="Pam Heinold · ERA American Real Estate"
         headline="Let's find the place that"
