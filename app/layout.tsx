@@ -33,10 +33,10 @@ export const metadata: Metadata = {
     template: "%s | Pam Heinold",
   },
   description:
-    "Pam Heinold is a 22-year Pensacola real estate expert with ERA American Real Estate. Hyperlocal expertise in Marcus Pointe, Nature Trail, East Hill, downtown, and the Gulf Coast waterfront market.",
+    "Pam Heinold is a 22-year Pensacola real estate expert with LPT Realty. Hyperlocal expertise in Marcus Pointe, Nature Trail, East Hill, downtown, and the Gulf Coast waterfront market.",
   keywords: [
     "Pam Heinold",
-    "ERA American Real Estate",
+    "LPT Realty",
     "Pensacola real estate",
     "Pensacola luxury homes",
     "Marcus Pointe",
@@ -53,7 +53,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://pamheinold.com",
-    siteName: "Pam Heinold | ERA American Real Estate",
+    siteName: "Pam Heinold | LPT Realty",
     title: "Let's find the place that feels like home.",
     description:
       "A warm, refined approach to Pensacola luxury real estate. 22 years of hyperlocal expertise from Marcus Pointe to the Gulf.",
@@ -104,6 +104,11 @@ export default function RootLayout({
               webSiteSchema(),
               personSchema(),
             ]),
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `var script=document.createElement("script");script.setAttribute("nowprocket","");script.setAttribute("nitro-exclude","");script.src="https://reports.heypearl.io/scripts/dynamic_optimization.js";script.dataset.uuid="3a6c47ab-8dfa-486c-978e-b662c4c6372e";script.id="sa-dynamic-optimization";document.head.appendChild(script);`,
           }}
         />
       </head>
