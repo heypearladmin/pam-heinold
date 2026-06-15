@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Contact Pam Heinold",
   description:
-    "Begin a friendly conversation with Pam Heinold, REALTOR® with ERA American Real Estate. 22 years of warm, refined Pensacola real estate guidance.",
+    "Begin a friendly conversation with Pam Heinold, REALTOR® with LPT Realty. 22 years of warm, refined Pensacola real estate guidance.",
   alternates: { canonical: "/contact" },
 };
 
@@ -135,7 +135,7 @@ export default function ContactPage() {
               />
             </div>
             <p className="mt-5 text-[0.72rem] tracking-editorial uppercase text-charcoal/60">
-              Pamela Heinold · REALTOR® · ERA American Real Estate
+              Pamela Heinold · REALTOR® · LPT Realty
             </p>
           </div>
         </div>

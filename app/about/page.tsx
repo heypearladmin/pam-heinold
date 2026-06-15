@@ -8,7 +8,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "About Pam Heinold",
   description:
-    "Pamela Heinold is a 22-year Pensacola real estate authority with ERA American Real Estate. Cozy, elegant, relatable guidance for luxury buyers and sellers across the Gulf Coast.",
+    "Pamela Heinold is a 22-year Pensacola real estate authority with LPT Realty. Cozy, elegant, relatable guidance for luxury buyers and sellers across the Gulf Coast.",
   alternates: { canonical: "/about" },
 };
 

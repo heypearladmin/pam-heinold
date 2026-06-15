@@ -31,7 +31,7 @@ export default function Navbar() {
         <Link
           href="/"
           className="flex items-center gap-3 leading-tight"
-          aria-label="Pam Heinold — ERA American Real Estate home"
+          aria-label="Pam Heinold — LPT Realty home"
         >
           <Image
             src={site.logo.primary}

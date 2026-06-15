@@ -113,8 +113,7 @@ export default function Footer() {
       <div className="border-t border-cream/10">
         <div className="max-w-editorial mx-auto px-6 lg:px-10 py-6 flex flex-col md:flex-row items-start md:items-center justify-between gap-3 text-xs text-cream/55">
           <p>
-            © {new Date().getFullYear()} Pamela Heinold · ERA American Real
-            Estate · Independently owned & operated
+            © {new Date().getFullYear()} Pamela Heinold · LPT Realty
           </p>
           <ul className="flex flex-wrap gap-x-6 gap-y-2 tracking-editorial uppercase">
             <li>

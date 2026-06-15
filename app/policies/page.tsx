@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Privacy Policy",
   description:
-    "Privacy Policy for ERA American Real Estate, including how mobile information and SMS opt-in data are handled.",
+    "Privacy Policy for LPT Realty, including how mobile information and SMS opt-in data are handled.",
   alternates: { canonical: "/policies" },
 };
 

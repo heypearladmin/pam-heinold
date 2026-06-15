@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 export const metadata = {
   title: "Terms & Conditions",
   description:
-    "Terms & Conditions for ERA American Real Estate, including SMS, AI-assisted calling, and website usage terms.",
+    "Terms & Conditions for LPT Realty, including SMS, AI-assisted calling, and website usage terms.",
   alternates: { canonical: "/terms" },
 };
 

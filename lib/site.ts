@@ -7,13 +7,13 @@ export const site = {
     yearsExperience: 22,
     headshot: "/images/pam-heinold-headshot.jpg",
     headshotAlt:
-      "Portrait of Pam Heinold, REALTOR® with ERA American Real Estate",
+      "Portrait of Pam Heinold, REALTOR® with LPT Realty",
     tagline: "Let's find the place that feels like home.",
   },
   company: {
-    name: "ERA American Real Estate",
-    nameStyled: "ERA AMERICAN REAL ESTATE",
-    independenceLine: "Independently owned & operated",
+    name: "LPT Realty",
+    nameStyled: "LPT REALTY",
+    independenceLine: "",
     phone: "(850) 232-2332",
     phoneHref: "tel:+18502322332",
     email: "pam@pamheinold.com",
@@ -29,9 +29,9 @@ export const site = {
     youtube: "https://www.youtube.com/@PamHeinold",
   },
   logo: {
-    primary: "/images/era-american-logo.svg",
-    light: "/images/era-american-logo-light.svg",
-    alt: "ERA American Real Estate",
+    primary: "/images/lpt-realty-logo.png",
+    light: "/images/lpt-realty-logo.png",
+    alt: "LPT Realty",
   },
   nav: [
     { label: "About", href: "/about" },
@@ -46,15 +46,15 @@ export const site = {
    * carrier reviewers reject campaigns whose disclosures drift across pages.
    */
   legal: {
-    brand: "ERA American Real Estate",
+    brand: "LPT Realty",
     effectiveDate: "January 1, 2026",
     consentVersion: "2026-01-A",
     sms: {
       // EXACT required language. Do not rewrite — carrier audits grep for this string.
       primary:
-        "I agree to receive text messages and phone calls from ERA American Real Estate at the phone number provided. Message frequency varies. Message & data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. By submitting this form, you agree to our Terms & Conditions and Privacy Policy.",
+        "I agree to receive text messages and phone calls from LPT Realty at the phone number provided. Message frequency varies. Message & data rates may apply. Reply STOP to unsubscribe. Reply HELP for help. By submitting this form, you agree to our Terms & Conditions and Privacy Policy.",
       ai:
-        "By providing your phone number, you consent to receive calls and text messages, including automated calls and AI-assisted communications, from ERA American Real Estate.",
+        "By providing your phone number, you consent to receive calls and text messages, including automated calls and AI-assisted communications, from LPT Realty.",
     },
     privacy: {
       // EXACT required clause for /policies — must appear verbatim for 10DLC approval.

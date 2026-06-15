@@ -27,7 +27,7 @@ export default function HomePage() {
       <JsonLd schema={localBusinessSchema()} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }])} />
       <Hero
-        eyebrow="Pam Heinold · ERA American Real Estate"
+        eyebrow="Pam Heinold · LPT Realty"
         headline="Let's find the place that"
         scriptAccent="feels like home."
         subheadline="22 years of warm, refined Pensacola real estate guidance — from the historic streets of East Hill to the gated calm of Marcus Pointe and the quiet beauty of the Gulf."
@@ -55,7 +55,7 @@ export default function HomePage() {
               />
             </div>
             <p className="mt-5 text-[0.72rem] tracking-editorial uppercase text-charcoal/65">
-              Pamela Heinold · REALTOR® · ERA American Real Estate
+              Pamela Heinold · REALTOR® · LPT Realty
             </p>
           </div>
 
