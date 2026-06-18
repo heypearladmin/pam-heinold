@@ -30,7 +30,10 @@ interface IncomingPayload {
   phone?: string;
   message?: string;
   consent?: boolean;
+  consentNonMarketing?: boolean;
+  consentMarketing?: boolean;
   consentText?: string;
+  consentMarketingText?: string;
   aiConsentText?: string;
   consentVersion?: string;
   submittedAt?: string;
@@ -56,7 +59,8 @@ export async function POST(req: NextRequest) {
   const email = body.email?.trim() ?? "";
   const phone = body.phone?.trim() ?? "";
   const message = body.message?.trim() ?? "";
-  const consent = body.consent === true;
+  const consentNonMarketing = body.consentNonMarketing === true;
+  const consentMarketing = body.consentMarketing === true;
 
   if (!firstName) return badRequest("First name is required.");
   if (!lastName) return badRequest("Last name is required.");
@@ -64,11 +68,6 @@ export async function POST(req: NextRequest) {
     return badRequest("A valid email is required.");
   }
   if (!phone) return badRequest("Phone number is required.");
-  if (!consent) {
-    return badRequest(
-      "You must agree to the SMS, AI calling, and privacy terms before submitting."
-    );
-  }
 
   // Consent audit record. Persist this somewhere durable in production
   // (CRM, database, webhook destination). Required by carriers/Twilio for
@@ -85,8 +84,10 @@ export async function POST(req: NextRequest) {
     email,
     phone,
     message,
-    consent: true,
+    consentNonMarketing,
+    consentMarketing,
     consentText: body.consentText ?? null,
+    consentMarketingText: body.consentMarketingText ?? null,
     aiConsentText: body.aiConsentText ?? null,
     consentVersion: body.consentVersion ?? null,
     submittedAt: body.submittedAt ?? new Date().toISOString(),
