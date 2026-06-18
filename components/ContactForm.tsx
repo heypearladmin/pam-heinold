@@ -210,7 +210,9 @@ export default function ContactForm() {
 
       {/* Consent checkboxes — optional per A2P 10DLC dual-consent pattern. */}
       <fieldset className="mt-2 border border-warmbrown/20 bg-paper/60 p-5 sm:p-6 grid gap-4">
-        <legend className="eyebrow text-warmbrown px-2">Consent <span className="normal-case font-normal text-charcoal/50 text-xs">(Optional)</span></legend>
+        <legend className="eyebrow text-warmbrown px-2">Consent</legend>
+
+        <p className="text-xs text-charcoal/45 -mt-1">Optional — check whichever applies to you.</p>
 
         <div className="flex items-baseline gap-3">
           <input
