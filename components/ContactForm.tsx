@@ -212,14 +212,14 @@ export default function ContactForm() {
       <fieldset className="mt-2 border border-warmbrown/20 bg-paper/60 p-5 sm:p-6 grid gap-4">
         <legend className="eyebrow text-warmbrown px-2">Consent <span className="normal-case font-normal text-charcoal/50 text-xs">(Optional)</span></legend>
 
-        <div className="flex items-start gap-3">
+        <div className="flex items-baseline gap-3">
           <input
             id={consentNonMarketingId}
             type="checkbox"
             name="consentNonMarketing"
             checked={form.consentNonMarketing}
             onChange={handleChange("consentNonMarketing")}
-            className="mt-1 h-4 w-4 shrink-0 accent-warmbrown border-warmbrown/50 cursor-pointer"
+            className="relative top-[2px] h-4 w-4 shrink-0 accent-warmbrown border-warmbrown/50 cursor-pointer"
           />
           <label
             htmlFor={consentNonMarketingId}
@@ -235,14 +235,14 @@ export default function ContactForm() {
           </label>
         </div>
 
-        <div className="flex items-start gap-3">
+        <div className="flex items-baseline gap-3">
           <input
             id={consentMarketingId}
             type="checkbox"
             name="consentMarketing"
             checked={form.consentMarketing}
             onChange={handleChange("consentMarketing")}
-            className="mt-1 h-4 w-4 shrink-0 accent-warmbrown border-warmbrown/50 cursor-pointer"
+            className="relative top-[2px] h-4 w-4 shrink-0 accent-warmbrown border-warmbrown/50 cursor-pointer"
           />
           <label
             htmlFor={consentMarketingId}
