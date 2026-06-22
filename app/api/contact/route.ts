@@ -60,9 +60,9 @@ export async function POST(req: NextRequest) {
   if (!phone) return badRequest("Phone number is required.");
 
   const apiKey = process.env.GHL_API_KEY;
+  console.info("[contact] apiKey present:", !!apiKey);
 
   if (!apiKey) {
-    // Local dev fallback — log and acknowledge so the form works without credentials.
     console.info("[contact] GHL_API_KEY not set. Would have created contact:", {
       firstName, lastName, email, phone,
       consentNonMarketing, consentMarketing,
@@ -119,6 +119,7 @@ export async function POST(req: NextRequest) {
       signal: AbortSignal.timeout(8000),
     });
 
+    console.info("[contact] GHL response status:", upstream.status);
     if (!upstream.ok) {
       const detail = await upstream.text().catch(() => "");
       console.error("[contact] GHL API error", upstream.status, detail);
