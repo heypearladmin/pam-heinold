@@ -49,7 +49,6 @@ export async function POST(req: NextRequest) {
   const lastName = body.lastName?.trim() ?? "";
   const email = body.email?.trim() ?? "";
   const phone = body.phone?.trim() ?? "";
-  const message = body.message?.trim() ?? "";
   const consentNonMarketing = body.consentNonMarketing === true;
   const consentMarketing = body.consentMarketing === true;
 
@@ -65,7 +64,7 @@ export async function POST(req: NextRequest) {
   if (!apiKey) {
     // Local dev fallback — log and acknowledge so the form works without credentials.
     console.info("[contact] GHL_API_KEY not set. Would have created contact:", {
-      firstName, lastName, email, phone, message,
+      firstName, lastName, email, phone,
       consentNonMarketing, consentMarketing,
     });
     return NextResponse.json({ ok: true });
@@ -85,7 +84,6 @@ export async function POST(req: NextRequest) {
     source: "pamheinoldhomes.com",
     tags,
     customFields: [
-      ...(message ? [{ key: "message", field_value: message }] : []),
       {
         key: "consent_version",
         field_value: body.consentVersion ?? "",
