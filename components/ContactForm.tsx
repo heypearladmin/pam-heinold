@@ -143,6 +143,7 @@ export default function ContactForm() {
       className="mt-14 grid gap-6"
       aria-label="Contact form"
       onSubmit={handleSubmit}
+      noValidate
     >
       <div className="grid sm:grid-cols-2 gap-6">
         <label htmlFor={firstNameId} className="block">
