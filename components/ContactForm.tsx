@@ -59,6 +59,7 @@ export default function ContactForm() {
     e: React.FormEvent<HTMLFormElement>
   ): Promise<void> => {
     e.preventDefault();
+    console.log("[form] handleSubmit fired, canSubmit:", canSubmit, "form:", form);
     if (!canSubmit) return;
 
     setStatus("submitting");
