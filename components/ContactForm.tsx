@@ -55,10 +55,7 @@ export default function ContactForm() {
       setForm((prev) => ({ ...prev, [key]: value }));
     };
 
-  const handleSubmit = async (
-    e: React.FormEvent<HTMLFormElement>
-  ): Promise<void> => {
-    e.preventDefault();
+  const handleSubmit = async (): Promise<void> => {
     console.log("[form] handleSubmit fired, canSubmit:", canSubmit, "form:", form);
     if (!canSubmit) return;
 
@@ -142,7 +139,7 @@ export default function ContactForm() {
     <form
       className="mt-14 grid gap-6"
       aria-label="Contact form"
-      onSubmit={handleSubmit}
+      onSubmit={(e) => e.preventDefault()}
       noValidate
     >
       <div className="grid sm:grid-cols-2 gap-6">
@@ -276,9 +273,10 @@ export default function ContactForm() {
 
       <div className="pt-4">
         <button
-          type="submit"
+          type="button"
           disabled={!canSubmit}
           aria-disabled={!canSubmit}
+          onClick={handleSubmit}
           className="w-full sm:w-auto inline-block bg-warmbrown text-cream px-7 py-3.5 text-[0.78rem] tracking-wider uppercase hover:bg-nearblack transition-colors duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-warmbrown"
         >
           {status === "submitting" ? "Sending…" : "Send Note"}
