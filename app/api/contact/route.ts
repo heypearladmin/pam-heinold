@@ -3,25 +3,17 @@ import { NextRequest, NextResponse } from "next/server";
 /**
  * Route handler for the A2P 10DLC compliant contact form.
  *
- * Responsibilities:
- *  - Validate required fields.
- *  - Enforce that the consent checkbox was checked client-side.
- *  - Capture an auditable consent record (timestamp, IP, user-agent,
- *    consent text version, exact consent strings) — this is the artifact
- *    Twilio / GoHighLevel may ask for during an A2P 10DLC review.
- *  - Forward the payload to CONTACT_WEBHOOK_URL (e.g. a GoHighLevel inbound
- *    webhook or your CRM). If the env var is not set we still log so local
- *    development works.
+ * Creates a contact directly in GoHighLevel via the Contacts API.
  *
  * Configure on Vercel:
  *   Project Settings → Environment Variables → add:
- *     CONTACT_WEBHOOK_URL = https://services.leadconnectorhq.com/...   (GHL)
- *
- * Runtime is explicitly set to Node so we can use Node-only APIs if needed
- * (e.g. a future swap to Resend/Twilio SDK).
+ *     GHL_API_KEY = pit-xxxx   (Settings → Integrations → API Keys)
  */
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
+
+const GHL_LOCATION_ID = "0OPuLHgxqCWZe7IQIS3e";
+const GHL_API_URL = "https://services.leadconnectorhq.com/contacts/";
 
 interface IncomingPayload {
   firstName?: string;
@@ -29,7 +21,6 @@ interface IncomingPayload {
   email?: string;
   phone?: string;
   message?: string;
-  consent?: boolean;
   consentNonMarketing?: boolean;
   consentMarketing?: boolean;
   consentText?: string;
@@ -69,67 +60,81 @@ export async function POST(req: NextRequest) {
   }
   if (!phone) return badRequest("Phone number is required.");
 
-  // Consent audit record. Persist this somewhere durable in production
-  // (CRM, database, webhook destination). Required by carriers/Twilio for
-  // A2P 10DLC opt-in audits.
-  const ip =
-    req.headers.get("x-forwarded-for")?.split(",")[0]?.trim() ??
-    req.headers.get("x-real-ip") ??
-    null;
-  const userAgent = req.headers.get("user-agent") ?? null;
+  const apiKey = process.env.GHL_API_KEY;
 
-  const record = {
+  if (!apiKey) {
+    // Local dev fallback — log and acknowledge so the form works without credentials.
+    console.info("[contact] GHL_API_KEY not set. Would have created contact:", {
+      firstName, lastName, email, phone, message,
+      consentNonMarketing, consentMarketing,
+    });
+    return NextResponse.json({ ok: true });
+  }
+
+  // Build tags from consent selections for 10DLC audit trail.
+  const tags: string[] = ["website-contact-form"];
+  if (consentNonMarketing) tags.push("sms-consent-non-marketing");
+  if (consentMarketing) tags.push("sms-consent-marketing");
+
+  const ghlPayload = {
+    locationId: GHL_LOCATION_ID,
     firstName,
     lastName,
     email,
     phone,
-    message,
-    consentNonMarketing,
-    consentMarketing,
-    consentText: body.consentText ?? null,
-    consentMarketingText: body.consentMarketingText ?? null,
-    aiConsentText: body.aiConsentText ?? null,
-    consentVersion: body.consentVersion ?? null,
-    submittedAt: body.submittedAt ?? new Date().toISOString(),
-    pageUrl: body.pageUrl ?? null,
-    ip,
-    userAgent,
+    source: "pamheinoldhomes.com",
+    tags,
+    customFields: [
+      ...(message ? [{ key: "message", field_value: message }] : []),
+      {
+        key: "consent_version",
+        field_value: body.consentVersion ?? "",
+      },
+      {
+        key: "consent_non_marketing",
+        field_value: String(consentNonMarketing),
+      },
+      {
+        key: "consent_marketing",
+        field_value: String(consentMarketing),
+      },
+      {
+        key: "consent_submitted_at",
+        field_value: body.submittedAt ?? new Date().toISOString(),
+      },
+      {
+        key: "page_url",
+        field_value: body.pageUrl ?? "",
+      },
+    ],
   };
 
-  const webhookUrl = process.env.CONTACT_WEBHOOK_URL;
+  try {
+    const upstream = await fetch(GHL_API_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+        Version: "2021-07-28",
+      },
+      body: JSON.stringify(ghlPayload),
+      signal: AbortSignal.timeout(8000),
+    });
 
-  if (webhookUrl) {
-    try {
-      const upstream = await fetch(webhookUrl, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(record),
-        // Don't let a slow CRM hang the user's request indefinitely.
-        signal: AbortSignal.timeout(8000),
-      });
-
-      if (!upstream.ok) {
-        // Log but don't expose upstream details to the browser.
-        console.error(
-          "[contact] webhook responded with status",
-          upstream.status
-        );
-        return NextResponse.json(
-          { error: "We could not deliver your message. Please try again." },
-          { status: 502 }
-        );
-      }
-    } catch (err) {
-      console.error("[contact] webhook failed:", err);
+    if (!upstream.ok) {
+      const detail = await upstream.text().catch(() => "");
+      console.error("[contact] GHL API error", upstream.status, detail);
       return NextResponse.json(
         { error: "We could not deliver your message. Please try again." },
         { status: 502 }
       );
     }
-  } else {
-    // Local dev / no webhook configured yet — still acknowledge so the form
-    // works end-to-end. Replace this with persistent storage before launch.
-    console.info("[contact] CONTACT_WEBHOOK_URL not set. Captured:", record);
+  } catch (err) {
+    console.error("[contact] GHL API request failed:", err);
+    return NextResponse.json(
+      { error: "We could not deliver your message. Please try again." },
+      { status: 502 }
+    );
   }
 
   return NextResponse.json({ ok: true });
