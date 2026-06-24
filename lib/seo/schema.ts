@@ -135,6 +135,16 @@ export function serviceSchema(params: {
   });
 }
 
+export function speakableSchema(cssSelectors: string[]): SchemaObject {
+  return withContext({
+    "@type": "WebPage",
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: cssSelectors,
+    },
+  });
+}
+
 export function breadcrumbSchema(
   items: { name: string; url: string }[]
 ): SchemaObject {

@@ -7,7 +7,7 @@ import NeighborhoodCard from "@/components/NeighborhoodCard";
 import CTASection from "@/components/CTASection";
 import { blogPosts } from "@/lib/blog-data";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { localBusinessSchema, breadcrumbSchema, speakableSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 import { neighborhoods } from "@/lib/neighborhood-data";
 
@@ -26,6 +26,7 @@ export default function HomePage() {
     <>
       <JsonLd schema={localBusinessSchema()} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }])} />
+      <JsonLd schema={speakableSchema(["h1", "h2", ".hero-tagline", ".eyebrow"])} />
       <Hero
         eyebrow="Pam Heinold · LPT Realty"
         headline="Let's find the place that"

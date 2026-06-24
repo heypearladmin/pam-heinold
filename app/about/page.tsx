@@ -2,7 +2,7 @@ import Image from "next/image";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { personSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { personSchema, breadcrumbSchema, speakableSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -17,6 +17,7 @@ export default function AboutPage() {
     <>
       <JsonLd schema={personSchema()} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "About", url: `${site.company.website}/about` }])} />
+      <JsonLd schema={speakableSchema(["h1", "h2", ".eyebrow"])} />
       {/* Editorial header */}
       <section className="pt-40 pb-20 md:pt-48 md:pb-28 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12 md:gap-16 items-end">
