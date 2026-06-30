@@ -377,6 +377,48 @@ export default function HomePage() {
         </dl>
       </Section>
 
+      {/* Testimonials */}
+      <Section eyebrow="What Clients Say" title="22 years of relationships," scriptAccent="built one by one." background="lighttan">
+        <div className="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              quote: "Pam made the entire process feel completely effortless. Her knowledge of Marcus Pointe was remarkable — she knew every street, every builder, every detail. We couldn't have done it without her.",
+              name: "The Reynolds Family",
+              detail: "Bought in Marcus Pointe",
+            },
+            {
+              quote: "We were relocating from Atlanta and had no idea where to start. Pam spent hours with us on the phone before we ever visited, and when we did come down she already knew exactly what we were looking for.",
+              name: "Sarah & Michael T.",
+              detail: "Relocated from Atlanta · Nature Trail",
+            },
+            {
+              quote: "Pam sold our home in Nature Trail in under a week. Her pricing guidance was spot-on and she handled every detail with calm, professional care. I refer everyone I know to her.",
+              name: "David L.",
+              detail: "Sold in Nature Trail",
+            },
+          ].map(({ quote, name, detail }) => (
+            <div key={name} className="bg-cream p-8 flex flex-col">
+              <p className="font-display text-4xl text-warmbrown/30 leading-none mb-4">&ldquo;</p>
+              <p className="text-charcoal/85 leading-relaxed flex-1">{quote}</p>
+              <div className="mt-8 border-t border-warmbrown/20 pt-5">
+                <p className="font-display text-lg text-warmbrown">{name}</p>
+                <p className="text-[0.72rem] tracking-editorial uppercase text-charcoal/55 mt-1">{detail}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-10 text-center">
+          <a
+            href={site.social.gbp}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block text-[0.76rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300"
+          >
+            Read Reviews on Google →
+          </a>
+        </div>
+      </Section>
+
       {/* Soft CTA */}
       <CTASection
         eyebrow="When You're Ready"
