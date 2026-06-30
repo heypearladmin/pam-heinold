@@ -47,6 +47,7 @@ export function realEstateAgentSchema(): SchemaObject {
       site.social.instagram,
       site.social.linkedin,
       site.social.youtube,
+      site.social.gbp,
     ],
   });
 }
@@ -82,6 +83,7 @@ export function personSchema(): SchemaObject {
       site.social.instagram,
       site.social.linkedin,
       site.social.youtube,
+      site.social.gbp,
     ],
   });
 }
@@ -110,6 +112,7 @@ export function localBusinessSchema(): SchemaObject {
       site.social.instagram,
       site.social.linkedin,
       site.social.youtube,
+      site.social.gbp,
     ],
   });
 }

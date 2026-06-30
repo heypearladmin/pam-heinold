@@ -27,6 +27,7 @@ export const site = {
       "https://www.instagram.com/pamheinoldrealtor?igsh=MTVjc2VlbjVscjgxdQ==",
     linkedin: "https://www.linkedin.com/in/pamelaheinold/",
     youtube: "https://www.youtube.com/@PamHeinold",
+    gbp: "https://share.google/Pghp1LZqZzZf4S11W",
   },
   logo: {
     primary: "/images/lpt-realty-logo.png",
