@@ -144,6 +144,22 @@ export function serviceSchema(params: {
   });
 }
 
+export function faqPageSchema(
+  faqs: { question: string; answer: string }[]
+): SchemaObject {
+  return withContext({
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  });
+}
+
 export function webPageSchema(params: {
   name: string;
   url: string;

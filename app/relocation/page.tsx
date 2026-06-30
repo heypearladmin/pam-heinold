@@ -4,7 +4,7 @@ import Hero from "@/components/Hero";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { serviceSchema, breadcrumbSchema, webPageSchema } from "@/lib/seo/schema";
+import { serviceSchema, breadcrumbSchema, webPageSchema, faqPageSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -20,6 +20,13 @@ export default function RelocationPage() {
       <JsonLd schema={serviceSchema({ name: "Pensacola Relocation Guidance", url: `${site.company.website}/relocation`, description: "22 years guiding families and luxury buyers through Pensacola relocation. Hyperlocal neighborhood matching, school guidance, and Gulf Coast market expertise." })} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Relocation", url: `${site.company.website}/relocation` }])} />
       <JsonLd schema={webPageSchema({ name: "Pensacola Relocation Guide — Pam Heinold", url: `${site.company.website}/relocation`, description: "22 years guiding families and luxury buyers through Pensacola relocation. Hyperlocal neighborhood matching, school guidance, and Gulf Coast market expertise." })} />
+      <JsonLd schema={faqPageSchema([
+        { question: "What is it like to move to Pensacola, FL?", answer: "Pensacola is a welcoming Gulf Coast city known for its low cost of living, mild winters, strong schools, and beautiful beaches. Most relocation buyers are surprised by how quickly it feels like home. Pam Heinold has guided hundreds of relocation buyers through the process over 22 years." },
+        { question: "What are the best neighborhoods in Pensacola for families?", answer: "Marcus Pointe and Nature Trail are two of Pensacola's most popular family neighborhoods — both are gated communities with strong schools, parks, and quiet streets. East Hill is a historic walkable neighborhood popular with families who want charm and community. Pam can match your family's lifestyle to the right fit." },
+        { question: "What should I know about Pensacola schools before moving?", answer: "Pensacola has strong public schools across both Escambia and Santa Rosa counties, along with highly regarded private and faith-based options. School zone boundaries often determine which neighborhood families choose. Pam Heinold can walk you through school options alongside neighborhood choices." },
+        { question: "How long does it take to buy a home when relocating to Pensacola?", answer: "Most relocation buyers close within 30–60 days of going under contract. The process typically starts with a remote neighborhood consultation, followed by a focused in-person visit to tour homes, and then a remote offer if needed. Pam guides out-of-state buyers through every step." },
+        { question: "Is Pensacola affordable compared to other Gulf Coast cities?", answer: "Yes — Pensacola offers significantly lower home prices than comparable Gulf Coast markets like Naples or Sarasota, while still offering Gulf access, strong schools, and a high quality of life. It remains one of the most affordable major coastal cities in Florida." },
+      ])} />
       <Hero
         eyebrow="Relocating to Pensacola"
         headline="The Gulf is patient."
@@ -207,6 +214,24 @@ export default function RelocationPage() {
             </Link>
           </div>
         </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section eyebrow="Relocation Questions" title="What people ask" scriptAccent="before moving to Pensacola." background="paper">
+        <dl className="max-w-3xl divide-y divide-warmbrown/15">
+          {[
+            { q: "What is it like to move to Pensacola?", a: "Pensacola is a welcoming Gulf Coast city with low cost of living, mild winters, strong schools, and some of the country's most beautiful beaches. Most relocation buyers are surprised by how quickly it feels like home." },
+            { q: "What are the best neighborhoods in Pensacola for families?", a: "Marcus Pointe and Nature Trail are two of Pensacola's most popular family neighborhoods — both gated communities with strong schools and quiet streets. East Hill is a historic walkable neighborhood popular with families who want charm and community." },
+            { q: "What should I know about Pensacola schools before moving?", a: "Pensacola has strong public schools across Escambia and Santa Rosa counties, along with highly regarded private and faith-based options. School zone boundaries often determine which neighborhood families choose — Pam walks through this carefully with every relocation buyer." },
+            { q: "How long does it take to buy a home when relocating to Pensacola?", a: "Most relocation buyers close within 30–60 days of going under contract. The process typically starts with a remote neighborhood consultation, followed by a focused in-person visit, then a remote offer if needed." },
+            { q: "Is Pensacola affordable compared to other Gulf Coast cities?", a: "Yes — Pensacola offers significantly lower home prices than comparable Gulf Coast markets like Naples or Sarasota, while still offering Gulf access, strong schools, and a high quality of life." },
+          ].map(({ q, a }) => (
+            <div key={q} className="py-7">
+              <dt className="font-display text-xl text-warmbrown leading-snug">{q}</dt>
+              <dd className="mt-3 text-charcoal/80 leading-relaxed">{a}</dd>
+            </div>
+          ))}
+        </dl>
       </Section>
 
       <CTASection

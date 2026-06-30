@@ -7,7 +7,7 @@ import NeighborhoodCard from "@/components/NeighborhoodCard";
 import CTASection from "@/components/CTASection";
 import { blogPosts } from "@/lib/blog-data";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { localBusinessSchema, breadcrumbSchema, speakableSchema } from "@/lib/seo/schema";
+import { localBusinessSchema, breadcrumbSchema, speakableSchema, faqPageSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 import { neighborhoods } from "@/lib/neighborhood-data";
 
@@ -27,6 +27,13 @@ export default function HomePage() {
       <JsonLd schema={localBusinessSchema()} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }])} />
       <JsonLd schema={speakableSchema(["h1", "h2", ".hero-tagline", ".eyebrow"])} />
+      <JsonLd schema={faqPageSchema([
+        { question: "Who is Pam Heinold?", answer: "Pamela Heinold is a REALTOR® with LPT Realty and a 22-year Pensacola real estate authority. She specializes in hyperlocal buyer and seller guidance across Marcus Pointe, Nature Trail, East Hill, downtown Pensacola, Pensacola Beach, and Perdido Key." },
+        { question: "What neighborhoods does Pam Heinold specialize in?", answer: "Pam Heinold specializes in Marcus Pointe, Nature Trail, East Hill, downtown Pensacola, Pensacola Beach, and Perdido Key. She has spent years as a hyperlocal specialist in Marcus Pointe (~500 homes) and Nature Trail (~600 homes)." },
+        { question: "How do I buy a home in Pensacola, FL?", answer: "Buying a home in Pensacola starts with a friendly conversation about your goals, budget, and preferred lifestyle. Pam Heinold guides buyers through every step — from neighborhood selection and offer strategy to closing. Contact her at (850) 232-2332 or pam@pamheinold.com." },
+        { question: "Is Pensacola a good place to live?", answer: "Pensacola, FL is consistently ranked among the best places to live on the Gulf Coast for its low cost of living, mild winters, strong schools, historic neighborhoods, and proximity to some of the country's most beautiful beaches." },
+        { question: "How much do homes cost in Pensacola, FL?", answer: "Home prices in Pensacola vary widely by neighborhood. Historic East Hill and waterfront communities command premium prices, while inland neighborhoods like Marcus Pointe and Nature Trail offer excellent value for larger homes in gated communities. Contact Pam for current market data." },
+      ])} />
       <Hero
         eyebrow="Pam Heinold · LPT Realty"
         headline="Let's find the place that"
@@ -350,6 +357,24 @@ export default function HomePage() {
             Visit Pam&apos;s YouTube Channel →
           </a>
         </div>
+      </Section>
+
+      {/* FAQ */}
+      <Section eyebrow="Common Questions" title="What people ask" scriptAccent="before reaching out." background="paper">
+        <dl className="max-w-3xl divide-y divide-warmbrown/15">
+          {[
+            { q: "What neighborhoods does Pam specialize in?", a: "Pam has spent years as a hyperlocal specialist in Marcus Pointe (~500 homes) and Nature Trail (~600 homes) — two of Pensacola's most established gated communities. She also covers East Hill, downtown, Pensacola Beach, and Perdido Key." },
+            { q: "How do I get started buying a home in Pensacola?", a: "Start with a conversation. Pam walks buyers through neighborhood options, current market conditions, and what to expect at every stage — from first showing to closing. No rush, no pressure." },
+            { q: "Is now a good time to buy or sell in Pensacola?", a: "Pensacola's Gulf Coast market has shown strong long-term appreciation. Timing depends on your specific situation — Pam can give you a clear picture of current inventory, pricing trends, and what that means for your goals." },
+            { q: "Does Pam work with relocation buyers?", a: "Yes — relocation is one of Pam's specialties. She guides buyers moving from out of state through neighborhood selection, school research, commute planning, and remote offer strategy." },
+            { q: "How long has Pam Heinold been in Pensacola real estate?", a: "22 years. Pam has guided hundreds of buyers and sellers across Pensacola's most desirable neighborhoods, building deep relationships and hyperlocal expertise that no algorithm can replicate." },
+          ].map(({ q, a }) => (
+            <div key={q} className="py-7">
+              <dt className="font-display text-xl text-warmbrown leading-snug">{q}</dt>
+              <dd className="mt-3 text-charcoal/80 leading-relaxed">{a}</dd>
+            </div>
+          ))}
+        </dl>
       </Section>
 
       {/* Soft CTA */}
