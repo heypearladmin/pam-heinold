@@ -28,6 +28,8 @@ export const site = {
     linkedin: "https://www.linkedin.com/in/pamelaheinold/",
     youtube: "https://www.youtube.com/@PamHeinold",
     gbp: "https://share.google/Pghp1LZqZzZf4S11W",
+    zillow: "https://www.zillow.com/profile/PamelaHeinoldRealtor",
+    realtor: "https://www.realtor.com/realestateagents/56c488630fa417010075e0b5",
   },
   logo: {
     primary: "/images/lpt-realty-logo.png",

@@ -48,6 +48,8 @@ export function realEstateAgentSchema(): SchemaObject {
       site.social.linkedin,
       site.social.youtube,
       site.social.gbp,
+      site.social.zillow,
+      site.social.realtor,
     ],
   });
 }
@@ -84,6 +86,8 @@ export function personSchema(): SchemaObject {
       site.social.linkedin,
       site.social.youtube,
       site.social.gbp,
+      site.social.zillow,
+      site.social.realtor,
     ],
   });
 }
@@ -113,6 +117,8 @@ export function localBusinessSchema(): SchemaObject {
       site.social.linkedin,
       site.social.youtube,
       site.social.gbp,
+      site.social.zillow,
+      site.social.realtor,
     ],
   });
 }
