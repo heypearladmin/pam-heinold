@@ -14,6 +14,9 @@ export default function ContactForm() {
     "w-full bg-transparent border-b border-warmbrown/40 py-3 text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-warmbrown transition-colors duration-300";
 
   if (result?.ok) {
+    if (typeof window !== "undefined") {
+      window.gtag?.("event", "form_submit", { form_id: "contact" });
+    }
     return (
       <div className="mt-14 grid gap-6">
         <div className="border border-warmbrown/20 bg-paper/60 p-8 sm:p-10 text-center grid gap-5">

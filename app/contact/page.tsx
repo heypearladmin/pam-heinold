@@ -1,7 +1,7 @@
 import Image from "next/image";
 import ContactForm from "@/components/ContactForm";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { localBusinessSchema, breadcrumbSchema } from "@/lib/seo/schema";
+import { localBusinessSchema, breadcrumbSchema, webPageSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -18,6 +18,7 @@ export default function ContactPage() {
     <>
       <JsonLd schema={localBusinessSchema()} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: company.website }, { name: "Contact", url: `${company.website}/contact` }])} />
+      <JsonLd schema={webPageSchema({ name: "Contact Pam Heinold", url: `${company.website}/contact`, description: "Begin a friendly conversation with Pam Heinold, REALTOR® with LPT Realty. 22 years of warm, refined Pensacola real estate guidance." })} />
 
       <section className="pt-40 pb-20 md:pt-48 md:pb-28 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10 grid md:grid-cols-12 gap-12 md:gap-20 items-start">

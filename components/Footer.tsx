@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import GaLink from "@/components/GaLink";
 import { site } from "@/lib/site";
 
 export default function Footer() {
@@ -54,14 +55,14 @@ export default function Footer() {
           <address className="not-italic text-sm leading-relaxed text-cream/85 space-y-1">
             <div>{site.company.hyperlocalArea}</div>
             <div className="pt-3">
-              <a href={site.company.phoneHref} className="link-underline">
+              <GaLink href={site.company.phoneHref} event="phone_click" params={{ location: "footer" }} className="link-underline">
                 {site.company.phone}
-              </a>
+              </GaLink>
             </div>
             <div>
-              <a href={site.company.emailHref} className="link-underline">
+              <GaLink href={site.company.emailHref} event="email_click" params={{ location: "footer" }} className="link-underline">
                 {site.company.email}
-              </a>
+              </GaLink>
             </div>
           </address>
 

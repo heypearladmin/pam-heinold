@@ -135,6 +135,23 @@ export function serviceSchema(params: {
   });
 }
 
+export function webPageSchema(params: {
+  name: string;
+  url: string;
+  description: string;
+}): SchemaObject {
+  return withContext({
+    "@type": "WebPage",
+    "@id": `${params.url}#webpage`,
+    name: params.name,
+    url: params.url,
+    description: params.description,
+    inLanguage: "en-US",
+    isPartOf: { "@id": `${base}/#website` },
+    publisher: { "@id": `${base}/#agent` },
+  });
+}
+
 export function speakableSchema(cssSelectors: string[]): SchemaObject {
   return withContext({
     "@type": "WebPage",

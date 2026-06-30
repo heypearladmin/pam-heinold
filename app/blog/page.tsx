@@ -2,7 +2,7 @@ import BlogCard from "@/components/BlogCard";
 import CTASection from "@/components/CTASection";
 import { blogPosts } from "@/lib/blog-data";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { breadcrumbSchema } from "@/lib/seo/schema";
+import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 
 export const metadata = {
@@ -18,6 +18,7 @@ export default function BlogIndexPage() {
   return (
     <>
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Notes", url: `${site.company.website}/blog` }])} />
+      <JsonLd schema={webPageSchema({ name: "Pensacola Real Estate Notes — Pam Heinold", url: `${site.company.website}/blog`, description: "Friendly, honest thoughts on Pensacola real estate from Pam Heinold — 22-year local authority with LPT Realty." })} />
       <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10">
           <p className="eyebrow text-charcoal/60 mb-6">Notes</p>
