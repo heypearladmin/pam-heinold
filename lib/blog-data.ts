@@ -20,7 +20,7 @@ export const blogPosts: BlogPost[] = [
     category: "Buyer Guide",
     readTime: "9 min read",
     publishedAt: "July 2, 2026",
-    image: "/images/blog-pensacola-homeowners-insurance.jpg",
+    image: "/images/website-blog-pensacola-homeowners-insurance.png",
     imageAlt: "Pensacola coastal home with deep front porch and palm trees under clear blue sky",
     isNew: true,
     content: [
@@ -73,7 +73,7 @@ export const blogPosts: BlogPost[] = [
     category: "Hyperlocal",
     readTime: "8 min read",
     publishedAt: "June 19, 2026",
-    image: "/images/blog-east-hill-pensacola.jpg",
+    image: "/images/website-blog-east-hill-pensacola.png",
     imageAlt: "East Hill Pensacola historic bungalow with wrap-around porch and mature oak canopy on a quiet residential street",
     isNew: true,
     content: [
