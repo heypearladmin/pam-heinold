@@ -1,3 +1,4 @@
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -34,7 +35,22 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+function renderInline(text: string): React.ReactNode {
+  const parts = text.split(/(\*\*[^*]+\*\*)/g);
+  return parts.map((part, i) =>
+    part.startsWith("**") && part.endsWith("**")
+      ? <strong key={i}>{part.slice(2, -2)}</strong>
+      : part
+  );
+}
+
 function ContentBlock({ block }: { block: string }) {
+  if (block.startsWith("## ")) {
+    return <h2>{block.slice(3)}</h2>;
+  }
+  if (block.startsWith("### ")) {
+    return <h3>{block.slice(4)}</h3>;
+  }
   if (block.includes("\n-") || block.startsWith("- ")) {
     const lines = block
       .split("\n")
@@ -43,12 +59,12 @@ function ContentBlock({ block }: { block: string }) {
     return (
       <ul>
         {lines.map((line, i) => (
-          <li key={i}>{line.replace(/^-+\s*/, "")}</li>
+          <li key={i}>{renderInline(line.replace(/^-+\s*/, ""))}</li>
         ))}
       </ul>
     );
   }
-  return <p>{block}</p>;
+  return <p>{renderInline(block)}</p>;
 }
 
 export default async function BlogPostPage({ params }: Props) {
