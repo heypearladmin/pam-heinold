@@ -19,7 +19,7 @@ export const blogPosts: BlogPost[] = [
       "Florida's insurance market is one of the most important — and most misunderstood — parts of buying in Pensacola. A clear, practical guide to homeowners, flood, and wind coverage that every buyer should read before they fall in love with a home.",
     category: "Buyer Guide",
     readTime: "9 min read",
-    publishedAt: "July 2, 2026",
+    publishedAt: "July 1, 2026",
     image: "/images/website-blog-pensacola-homeowners-insurance.png",
     imageAlt: "Pensacola coastal home with deep front porch and palm trees under clear blue sky",
     isNew: true,
@@ -72,7 +72,7 @@ export const blogPosts: BlogPost[] = [
       "Historic bungalows, mature oak canopy, walkable streets, and a porch culture that actually exists — East Hill is one of Pensacola's most beloved neighborhoods. Here's what you need to know before you fall for it.",
     category: "Hyperlocal",
     readTime: "8 min read",
-    publishedAt: "June 19, 2026",
+    publishedAt: "June 26, 2026",
     image: "/images/website-blog-east-hill-pensacola.png",
     imageAlt: "East Hill Pensacola historic bungalow with wrap-around porch and mature oak canopy on a quiet residential street",
     isNew: true,
@@ -123,7 +123,7 @@ export const blogPosts: BlogPost[] = [
       "The Pensacola luxury market has matured. Buyers expect more, sellers must prepare more carefully, and the right strategy can quietly make six-figure differences. A friendly walkthrough of where things stand.",
     category: "Market Notes",
     readTime: "7 min read",
-    publishedAt: "January 18, 2026",
+    publishedAt: "April 8, 2026",
     image: "/images/blog-pensacola-luxury-2026.jpg",
     imageAlt:
       "Pensacola East Hill historic luxury home with deep front porch and oak trees",
@@ -147,7 +147,7 @@ export const blogPosts: BlogPost[] = [
       "From the historic streets of East Hill to the gated calm of Nature Trail, the Gulf views of Perdido Key to the porch culture of downtown — a friendly guide to finding the part of Pensacola that fits the life you want to live.",
     category: "Neighborhood Guide",
     readTime: "8 min read",
-    publishedAt: "February 10, 2026",
+    publishedAt: "April 12, 2026",
     image: "/images/blog-pensacola-by-lifestyle.jpg",
     imageAlt:
       "Tree-lined Pensacola street with classic Florida coastal architecture",
@@ -175,7 +175,7 @@ export const blogPosts: BlogPost[] = [
       "Pensacola is one of the most welcoming cities on the Gulf Coast — but the right neighborhood is everything. A patient, practical guide for families and professionals planning a move.",
     category: "Relocation",
     readTime: "9 min read",
-    publishedAt: "March 4, 2026",
+    publishedAt: "April 16, 2026",
     image: "/images/blog-moving-to-pensacola.jpg",
     imageAlt: "Welcoming Pensacola neighborhood at golden hour with historic architecture",
     content: [
@@ -205,7 +205,7 @@ export const blogPosts: BlogPost[] = [
       "Two of Pensacola's most established gated communities have very different rhythms. Here's what I've learned from years of working inside both, and why hyperlocal knowledge changes outcomes.",
     category: "Hyperlocal",
     readTime: "7 min read",
-    publishedAt: "March 28, 2026",
+    publishedAt: "April 21, 2026",
     image: "/images/blog-marcus-pointe-nature-trail.jpg",
     imageAlt: "Pensacola gated golf community home with mature landscaping",
     content: [
@@ -233,7 +233,7 @@ export const blogPosts: BlogPost[] = [
       "Today's luxury buyers form opinions before they ever step inside. A practical, cozy guide to preparing, presenting, and positioning a Pensacola home for the modern market.",
     category: "Seller Strategy",
     readTime: "7 min read",
-    publishedAt: "April 14, 2026",
+    publishedAt: "April 27, 2026",
     image: "/images/blog-prepare-for-luxury-market.jpg",
     imageAlt:
       "Bright, beautifully styled Pensacola home interior prepared for sale",
@@ -266,7 +266,7 @@ export const blogPosts: BlogPost[] = [
       "From East Hill's oak-canopied streets to the Gulf-front properties of Perdido Key, a friendly tour of the neighborhoods and blocks that define luxury living in Pensacola.",
     category: "Neighborhood Guide",
     readTime: "6 min read",
-    publishedAt: "June 12, 2026",
+    publishedAt: "June 20, 2026",
     image: "/images/Top 10 Luxury Streets and Blocks in Pensacola.png",
     imageAlt: "Aerial view of Pensacola luxury neighborhoods featuring upscale homes and beautiful coastal scenery",
     content: [
@@ -299,7 +299,7 @@ export const blogPosts: BlogPost[] = [
       "Pensacola welcomes relocation buyers more warmly than most cities — but matching the right neighborhood to the right life takes local knowledge. A friendly, practical guide.",
     category: "Relocation",
     readTime: "7 min read",
-    publishedAt: "June 12, 2026",
+    publishedAt: "June 14, 2026",
     image: "/images/Relocation to Pensacola Luxury Buyer Relocation Guide.png",
     imageAlt: "Luxury waterfront home in Pensacola highlighting upscale living and community vibrancy",
     content: [
@@ -325,7 +325,7 @@ export const blogPosts: BlogPost[] = [
       "The Pensacola luxury market has matured, and 2026 is rewarding preparation, precise pricing, and local knowledge more than ever. A clear-eyed look at where things stand.",
     category: "Market Notes",
     readTime: "6 min read",
-    publishedAt: "June 12, 2026",
+    publishedAt: "June 8, 2026",
     image: "/images/Pensacola Luxury Market 2026 What Discerning Buyers and Sellers Need.png",
     imageAlt: "Luxury coastal property in Pensacola with modern architecture and waterfront view",
     content: [
@@ -351,7 +351,7 @@ export const blogPosts: BlogPost[] = [
       "Nature Trail is one of Pensacola's most thoughtfully designed gated communities. Here's what I've learned from years of working inside it — and what gives buyers a real edge.",
     category: "Hyperlocal",
     readTime: "7 min read",
-    publishedAt: "June 12, 2026",
+    publishedAt: "June 2, 2026",
     image: "/images/Nature Trail Hyperlocal Buyer Strategy and Home Selection.png",
     imageAlt: "Luxury homes and lush greenery in Nature Trail neighborhood, Pensacola",
     content: [
@@ -379,7 +379,7 @@ export const blogPosts: BlogPost[] = [
       "Two of Pensacola's most established gated communities, side by side. They look similar on paper and feel very different in person — here's how to think about the choice.",
     category: "Hyperlocal",
     readTime: "7 min read",
-    publishedAt: "June 12, 2026",
+    publishedAt: "May 27, 2026",
     image: "/images/Marcus Pointe vs Nature Trail Gated Community Comparison.png",
     imageAlt: "Luxurious gated community in Pensacola showcasing spacious homes and lush landscapes",
     content: [
@@ -406,7 +406,7 @@ export const blogPosts: BlogPost[] = [
       "Marcus Pointe is a neighborhood where local knowledge makes a real difference. Here's what I've learned from years of working inside this community — and how to find the right home within it.",
     category: "Hyperlocal",
     readTime: "6 min read",
-    publishedAt: "June 12, 2026",
+    publishedAt: "May 21, 2026",
     image: "/images/Marcus Pointe Hyperlocal Buyer Strategy and Street-by-Street Insights.png",
     imageAlt: "Elegant luxury home exterior showcasing upscale architecture in Pensacola",
     content: [
@@ -433,7 +433,7 @@ export const blogPosts: BlogPost[] = [
       "For families relocating to Pensacola, school quality often shapes neighborhood choice. A clear, friendly comparison of what's available — and how it connects to where you live.",
     category: "Relocation",
     readTime: "7 min read",
-    publishedAt: "June 12, 2026",
+    publishedAt: "May 15, 2026",
     image: "/images/Comparing Local Public and Private Schools in Pensacola.png",
     imageAlt: "Vibrant school environment in Pensacola with students engaged in educational activities",
     content: [
@@ -460,7 +460,7 @@ export const blogPosts: BlogPost[] = [
       "Pensacola's culinary scene is better than most people expect — and a meaningful part of what makes the luxury lifestyle here so satisfying. A friendly guide to dining well in our city.",
     category: "Lifestyle",
     readTime: "5 min read",
-    publishedAt: "June 12, 2026",
+    publishedAt: "May 9, 2026",
     image: "/images/Best Fine Dining in Pensacola Area.png",
     imageAlt: "Luxurious fine dining setup in Pensacola with gourmet seafood dishes and elegant ambiance",
     content: [
@@ -489,7 +489,7 @@ export const blogPosts: BlogPost[] = [
       "The Gulf Coast doesn't make any more land. A friendly walkthrough of three of Pensacola's most beloved waterfront markets — and what to know before you fall in love with one.",
     category: "Waterfront",
     readTime: "8 min read",
-    publishedAt: "April 30, 2026",
+    publishedAt: "May 3, 2026",
     image: "/images/blog-pensacola-waterfront.jpg",
     imageAlt:
       "Pensacola waterfront home overlooking calm bayou and Gulf access",
