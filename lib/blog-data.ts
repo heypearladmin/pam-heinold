@@ -121,7 +121,6 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "July 1, 2026",
     image: "/images/website-blog-pensacola-homeowners-insurance.png",
     imageAlt: "Pensacola coastal home with deep front porch and palm trees under clear blue sky",
-    isNew: true,
     content: [
       "## The Insurance Conversation Nobody Warns You About",
       "In my 22 years of guiding buyers through Pensacola real estate, one topic comes up early in almost every transaction — and it surprises people more than almost anything else about the process: homeowners insurance.",
@@ -174,7 +173,6 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "June 26, 2026",
     image: "/images/website-blog-east-hill-pensacola.png",
     imageAlt: "East Hill Pensacola historic bungalow with wrap-around porch and mature oak canopy on a quiet residential street",
-    isNew: true,
     content: [
       "## The Neighborhood That Announces Itself",
       "East Hill has a quality I've noticed in buyers for 22 years: they know when they're in it. The air changes a little. The pace slows. The trees — and there are a lot of them — do something to the light. You turn onto one of the main residential streets and within a block or two, something clicks.",
