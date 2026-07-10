@@ -49,6 +49,10 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Pam Heinold" }],
   creator: "Pam Heinold",
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
