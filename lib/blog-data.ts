@@ -149,7 +149,6 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "July 22, 2026",
     image: "/images/website-blog-buyer-expectations-pensacola-2026.png",
     imageAlt: "Well-staged bright Pensacola home interior with neutral tones, fresh flowers, and natural light streaming through clean windows",
-    isNew: true,
     content: [
       "## The Buyer Has Changed",
       "The buyer walking through your Pensacola home in 2026 is a more sophisticated consumer than the buyer of three years ago. They've been watching the market. They've seen homes sit. They've lost offers, recalibrated, and decided to wait for the right home rather than overpay for the wrong one. They arrive at your door with data, with a patient agent, and with clear expectations — and those expectations have shifted.",
@@ -192,7 +191,6 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "July 18, 2026",
     image: "/images/website-blog-same-price-different-homes-pensacola.png",
     imageAlt: "Split view of two Pensacola homes on different streets — one with mature trees and established landscaping, one in a newer subdivision — both with similar for-sale pricing",
-    isNew: true,
     content: [
       "## The Number That Misleads",
       "In the early weeks of a home search, most buyers think about price as a filter. You set a range — say, $450,000 to $550,000 — and expect that the homes you see within it will feel roughly equivalent. They almost never do.",
@@ -231,7 +229,6 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "July 15, 2026",
     image: "/images/website-blog-monthly-payment-factors-pensacola.png",
     imageAlt: "Person reviewing mortgage documents and insurance quotes at a kitchen table with a calculator and coffee in a bright Pensacola home",
-    isNew: true,
     content: [
       "## The Payment Most Buyers Don't Calculate Accurately",
       "When a buyer runs the numbers on a Pensacola home, the instinct is to start with the loan amount and the interest rate. Those two variables are visible, easy to calculate, and broadly understood. The final monthly payment, however, is shaped by a longer list of variables — and several of them surprise buyers who haven't bought in coastal Florida before.",
@@ -273,7 +270,6 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "July 11, 2026",
     image: "/images/website-blog-new-construction-vs-existing-pensacola.png",
     imageAlt: "Side-by-side view of a newly built modern Pensacola home and a restored 1950s Craftsman bungalow on an established street with mature trees",
-    isNew: true,
     content: [
       "## A Choice That Shapes More Than Just the House",
       "When buyers in Pensacola begin their search, many arrive with a strong intuition about which direction they want to go — new construction or existing home. Some want the clean slate and modern systems of a new build. Others want the established character and mature landscaping of an older neighborhood. Both are legitimate preferences, and both paths lead to genuinely good homes.",
@@ -315,7 +311,6 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "July 8, 2026",
     image: "/images/website-blog-home-maintenance-costs-pensacola.png",
     imageAlt: "Homeowner reviewing a maintenance checklist on a clipboard in front of an older Pensacola home with a tile roof and lush landscaping",
-    isNew: true,
     content: [
       "## The Cost That Surprises Most New Homeowners",
       "There is a moment that many first-time buyers — and even experienced buyers — encounter within the first year of ownership: an unexpected repair that feels large, feels urgent, and was entirely predictable if anyone had explained what to budget for. In Pensacola's climate — hot, humid, coastal — that moment tends to arrive faster than buyers from other markets expect.",
@@ -359,7 +354,6 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "July 5, 2026",
     image: "/images/website-blog-home-value-protection-pensacola.png",
     imageAlt: "Established Pensacola neighborhood street with mature oak trees, well-maintained homes, and late afternoon golden light",
-    isNew: true,
     content: [
       "## The Question Most Buyers Don't Think to Ask",
       "When buyers walk through a home in Pensacola, they're evaluating it against their immediate needs — the layout, the finishes, the backyard. What they're less likely to think about in the moment is the question that often matters more over a five or ten-year horizon: will this home hold its value if I need to sell?",
