@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { blogPosts } from "@/lib/blog-data";
 import { neighborhoods } from "@/lib/neighborhood-data";
+import { getAllFAQs } from "@/lib/blog-utils";
 
 const base = site.company.website.replace(/\/$/, "");
 const now = new Date();
@@ -39,6 +40,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.75,
   }));
 
+  const faqEntries: MetadataRoute.Sitemap = getAllFAQs().map((f) => ({
+    url: `${base}/faq/${f.slug}`,
+    lastModified: new Date(f.lastUpdated ?? now),
+    changeFrequency: "monthly",
+    priority: 0.65,
+  }));
+
   const staticEntries: MetadataRoute.Sitemap = staticPages.map(
     ({ path, priority, changeFrequency }) => ({
       url: `${base}${path}`,
@@ -48,5 +56,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...staticEntries, ...neighborhoodEntries, ...blogEntries];
+  return [...staticEntries, ...neighborhoodEntries, ...blogEntries, ...faqEntries];
 }
