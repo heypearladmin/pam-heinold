@@ -38,7 +38,7 @@ export default function BlogIndexPage() {
 
       <section className="pb-20 md:pb-28 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10">
-          <BlogCard post={feature} layout="feature" />
+          <BlogCard post={feature} layout="feature" priority />
         </div>
       </section>
 
@@ -47,8 +47,8 @@ export default function BlogIndexPage() {
           <div className="border-t border-tan/60 pt-16 md:pt-20">
             <p className="eyebrow text-charcoal/60 mb-10">More Notes</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
-              {rest.map((post) => (
-                <BlogCard key={post.slug} post={post} />
+              {rest.map((post, i) => (
+                <BlogCard key={post.slug} post={post} priority={i < 2} />
               ))}
             </div>
           </div>

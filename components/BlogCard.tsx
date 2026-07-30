@@ -5,9 +5,10 @@ import { BlogPost } from "@/lib/blog-data";
 interface BlogCardProps {
   post: BlogPost;
   layout?: "standard" | "feature";
+  priority?: boolean;
 }
 
-export default function BlogCard({ post, layout = "standard" }: BlogCardProps) {
+export default function BlogCard({ post, layout = "standard", priority = false }: BlogCardProps) {
   const isFeature = layout === "feature";
 
   return (
@@ -29,6 +30,7 @@ export default function BlogCard({ post, layout = "standard" }: BlogCardProps) {
               ? "(min-width: 768px) 66vw, 100vw"
               : "(min-width: 768px) 33vw, 100vw"
           }
+          priority={priority}
           className="object-cover transition-transform duration-700 ease-soft group-hover:scale-[1.03]"
         />
       </div>
