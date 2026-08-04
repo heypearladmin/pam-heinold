@@ -12,9 +12,9 @@ import { site } from "@/lib/site";
 import { neighborhoods } from "@/lib/neighborhood-data";
 
 export const metadata = {
-  title: "Pam Heinold — Pensacola Real Estate Authority",
+  title: "Pam Heinold — Realtor in Pensacola, FL | LPT Realty",
   description:
-    "22 years of cozy, elegant, hyperlocal Pensacola real estate guidance. Marcus Pointe, Nature Trail, East Hill, downtown, and the Gulf Coast waterfront.",
+    "Looking for the best real estate agent in Pensacola, FL? Pam Heinold is a top-rated Pensacola realtor with 22 years of local experience. Marcus Pointe, East Hill, Nature Trail, Pensacola Beach, and the Gulf Coast.",
   alternates: { canonical: "/" },
 };
 

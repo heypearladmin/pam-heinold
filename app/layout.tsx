@@ -28,16 +28,21 @@ const sans = Montserrat({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pamheinold.com"),
+  alternates: { canonical: "https://pamheinold.com" },
   title: {
-    default: "Pam Heinold | Pensacola Real Estate Authority",
-    template: "%s | Pam Heinold",
+    default: "Pam Heinold | Pensacola Realtor & Real Estate Agent",
+    template: "%s | Pam Heinold — Pensacola Realtor",
   },
   description:
-    "Pam Heinold is a 22-year Pensacola real estate expert with LPT Realty. Hyperlocal expertise in Marcus Pointe, Nature Trail, East Hill, downtown, and the Gulf Coast waterfront market.",
+    "Pam Heinold is a top-rated Pensacola realtor and real estate agent with 22 years of local experience. LPT Realty. Helping buyers and sellers in Marcus Pointe, East Hill, Nature Trail, Pensacola Beach, and the Gulf Coast.",
   keywords: [
     "Pam Heinold",
-    "LPT Realty",
-    "Pensacola real estate",
+    "Pensacola realtor",
+    "Pensacola real estate agent",
+    "real estate agent Pensacola FL",
+    "best realtor Pensacola",
+    "top real estate agent Pensacola",
+    "LPT Realty Pensacola",
     "Pensacola luxury homes",
     "Marcus Pointe",
     "Nature Trail Pensacola",
@@ -45,7 +50,7 @@ export const metadata: Metadata = {
     "Pensacola Beach real estate",
     "Perdido Key",
     "Gulf Coast waterfront",
-    "Pensacola realtor",
+    "experienced realtor Pensacola",
   ],
   authors: [{ name: "Pam Heinold" }],
   creator: "Pam Heinold",
