@@ -10,22 +10,9 @@ const nextConfig: NextConfig = {
   compress: true,
   async redirects() {
     return [
-      // Consolidate www → non-www (fixes Google Search Console split-domain issue)
       {
         source: "/:path*",
         has: [{ type: "host", value: "www.pamheinold.com" }],
-        destination: "https://pamheinold.com/:path*",
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "www.pamheinoldhomes.com" }],
-        destination: "https://pamheinold.com/:path*",
-        permanent: true,
-      },
-      {
-        source: "/:path*",
-        has: [{ type: "host", value: "pamheinoldhomes.com" }],
         destination: "https://pamheinold.com/:path*",
         permanent: true,
       },
