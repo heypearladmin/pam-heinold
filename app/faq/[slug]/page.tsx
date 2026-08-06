@@ -166,7 +166,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!faq) return { title: "Not Found" };
   const description = extractQuickAnswer(faq.answer) || faq.answer.slice(0, 160);
   return {
-    title: `${faq.question} — Pam Heinold`,
+    title: faq.question,
     description,
     alternates: { canonical: `/faq/${faq.slug}` },
     openGraph: {
