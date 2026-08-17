@@ -92,37 +92,6 @@ export function personSchema(): SchemaObject {
   });
 }
 
-export function localBusinessSchema(): SchemaObject {
-  return withContext({
-    "@type": ["LocalBusiness", "RealEstateAgent"],
-    "@id": `${base}/#localbusiness`,
-    name: `${site.agent.fullName} — ${site.company.name}`,
-    url: base,
-    telephone: site.company.phone,
-    email: site.company.email,
-    priceRange: "$$$",
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "Pensacola",
-      addressRegion: "FL",
-      addressCountry: "US",
-    },
-    areaServed: [
-      { "@type": "City", name: "Pensacola", containedInPlace: "Florida" },
-      { "@type": "AdministrativeArea", name: "Escambia County, Florida" },
-    ],
-    sameAs: [
-      site.social.facebook,
-      site.social.instagram,
-      site.social.linkedin,
-      site.social.youtube,
-      site.social.gbp,
-      site.social.zillow,
-      site.social.realtor,
-    ],
-  });
-}
-
 export function serviceSchema(params: {
   name: string;
   url: string;

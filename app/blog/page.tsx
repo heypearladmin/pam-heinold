@@ -6,7 +6,7 @@ import { breadcrumbSchema, webPageSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 
 export const metadata = {
-  title: "Notes — Friendly Pensacola Real Estate Thoughts",
+  title: "Blog — Friendly Pensacola Real Estate Thoughts",
   description:
     "Market notes, neighborhood guides, and gentle relocation guidance from Pam Heinold — written the way she'd talk to a friend across the kitchen table.",
   alternates: { canonical: "/blog" },
@@ -17,11 +17,11 @@ export default function BlogIndexPage() {
 
   return (
     <>
-      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Notes", url: `${site.company.website}/blog` }])} />
-      <JsonLd schema={webPageSchema({ name: "Pensacola Real Estate Notes — Pam Heinold", url: `${site.company.website}/blog`, description: "Friendly, honest thoughts on Pensacola real estate from Pam Heinold — 22-year local authority with LPT Realty." })} />
+      <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }, { name: "Blog", url: `${site.company.website}/blog` }])} />
+      <JsonLd schema={webPageSchema({ name: "Pensacola Real Estate Blog — Pam Heinold", url: `${site.company.website}/blog`, description: "Friendly, honest thoughts on Pensacola real estate from Pam Heinold — 22-year local authority with LPT Realty." })} />
       <section className="pt-40 pb-16 md:pt-48 md:pb-20 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10">
-          <p className="eyebrow text-charcoal/60 mb-6">Notes</p>
+          <p className="eyebrow text-charcoal/60 mb-6">Blog</p>
           <h1 className="font-display text-5xl md:text-7xl text-warmbrown leading-[1.06] tracking-tight max-w-4xl">
             Friendly thoughts on Pensacola{" "}
             <span className="script text-warmbrown/80 text-6xl md:text-8xl">
@@ -45,7 +45,7 @@ export default function BlogIndexPage() {
       <section className="pb-28 md:pb-40 bg-paper">
         <div className="max-w-editorial mx-auto px-6 lg:px-10">
           <div className="border-t border-tan/60 pt-16 md:pt-20">
-            <p className="eyebrow text-charcoal/60 mb-10">More Notes</p>
+            <p className="eyebrow text-charcoal/60 mb-10">More From The Blog</p>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-16">
               {rest.map((post, i) => (
                 <BlogCard key={post.slug} post={post} priority={i < 2} />

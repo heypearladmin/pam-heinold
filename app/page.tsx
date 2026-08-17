@@ -7,7 +7,7 @@ import NeighborhoodCard from "@/components/NeighborhoodCard";
 import CTASection from "@/components/CTASection";
 import { blogPosts } from "@/lib/blog-data";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { localBusinessSchema, breadcrumbSchema, speakableSchema, faqPageSchema } from "@/lib/seo/schema";
+import { breadcrumbSchema, speakableSchema, faqPageSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 import { neighborhoods } from "@/lib/neighborhood-data";
 
@@ -24,7 +24,6 @@ export default function HomePage() {
 
   return (
     <>
-      <JsonLd schema={localBusinessSchema()} />
       <JsonLd schema={breadcrumbSchema([{ name: "Home", url: site.company.website }])} />
       <JsonLd schema={speakableSchema(["h1", "h2", ".hero-tagline", ".eyebrow"])} />
       <JsonLd schema={faqPageSchema([
@@ -176,9 +175,9 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* Notes / Blog */}
+      {/* Blog */}
       <Section
-        eyebrow="Notes"
+        eyebrow="Blog"
         title="Friendly thoughts on Pensacola"
         scriptAccent="real estate."
         intro="Market notes, neighborhood guides, and gentle relocation guidance — written the way I&apos;d talk to a friend across the kitchen table."

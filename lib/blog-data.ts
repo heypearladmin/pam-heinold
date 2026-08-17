@@ -1095,7 +1095,7 @@ export const blogPosts: BlogPost[] = [
     category: "Neighborhood Guide",
     readTime: "6 min read",
     publishedAt: "June 20, 2026",
-    image: "/images/Top 10 Luxury Streets and Blocks in Pensacola.png",
+    image: "/images/pensacola-luxury-streets-blocks.png",
     imageAlt: "Aerial view of Pensacola luxury neighborhoods featuring upscale homes and beautiful coastal scenery",
     content: [
       "After 22 years in Pensacola real estate, I've walked almost every street in this city — sometimes with buyers, sometimes just because I love knowing the market the way a neighbor knows it. What I can tell you is this: Pensacola's luxury residential landscape is more layered and more distinctive than most people expect.",
@@ -1132,7 +1132,7 @@ export const blogPosts: BlogPost[] = [
     category: "Relocation",
     readTime: "7 min read",
     publishedAt: "June 14, 2026",
-    image: "/images/Relocation to Pensacola Luxury Buyer Relocation Guide.png",
+    image: "/images/pensacola-luxury-relocation-guide.png",
     imageAlt: "Luxury waterfront home in Pensacola highlighting upscale living and community vibrancy",
     content: [
       "In my 22 years working with Pensacola buyers, some of the most rewarding relationships I've built have been with families relocating from somewhere else entirely — Atlanta, Dallas, Nashville, Houston, the D.C. area. They arrive a little uncertain, do their homework, settle in, and then tell me a few months later they wish they'd come sooner.",
@@ -1162,7 +1162,7 @@ export const blogPosts: BlogPost[] = [
     category: "Market Notes",
     readTime: "6 min read",
     publishedAt: "June 8, 2026",
-    image: "/images/Pensacola Luxury Market 2026 What Discerning Buyers and Sellers Need.png",
+    image: "/images/pensacola-luxury-market-2026.png",
     imageAlt: "Luxury coastal property in Pensacola with modern architecture and waterfront view",
     content: [
       "The Pensacola luxury market in 2026 is one I'd describe as settled. Not slow — settled. The urgency of a few years ago has given way to something more considered, and that's actually good news for serious buyers and well-prepared sellers alike.",
@@ -1192,7 +1192,7 @@ export const blogPosts: BlogPost[] = [
     category: "Hyperlocal",
     readTime: "7 min read",
     publishedAt: "June 2, 2026",
-    image: "/images/Nature Trail Hyperlocal Buyer Strategy and Home Selection.png",
+    image: "/images/nature-trail-buyer-strategy.png",
     imageAlt: "Luxury homes and lush greenery in Nature Trail neighborhood, Pensacola",
     content: [
       "Nature Trail is a neighborhood I know well. I've spent years working with buyers and sellers inside this community, and what I can tell you is that the street-level details matter here — not just the floor plan or the price per square foot.",
@@ -1224,7 +1224,7 @@ export const blogPosts: BlogPost[] = [
     category: "Hyperlocal",
     readTime: "7 min read",
     publishedAt: "May 27, 2026",
-    image: "/images/Marcus Pointe vs Nature Trail Gated Community Comparison.png",
+    image: "/images/marcus-pointe-vs-nature-trail.png",
     imageAlt: "Luxurious gated community in Pensacola showcasing spacious homes and lush landscapes",
     content: [
       "Marcus Pointe and Nature Trail are two of the neighborhoods I know most intimately in Pensacola. I've worked with buyers and sellers inside both communities for years. And the question I get asked most often — by buyers trying to decide between them — is: what's actually different?",
@@ -1255,7 +1255,7 @@ export const blogPosts: BlogPost[] = [
     category: "Hyperlocal",
     readTime: "6 min read",
     publishedAt: "May 21, 2026",
-    image: "/images/Marcus Pointe Hyperlocal Buyer Strategy and Street-by-Street Insights.png",
+    image: "/images/marcus-pointe-buyer-strategy.png",
     imageAlt: "Elegant luxury home exterior showcasing upscale architecture in Pensacola",
     content: [
       "Marcus Pointe is one of those neighborhoods where the more you know it, the more you appreciate the details. The community sits around a beautiful golf course, home to approximately 500 residences, with streets that feel mature and unhurried in a way you can't quite manufacture in a newer development.",
@@ -1286,7 +1286,7 @@ export const blogPosts: BlogPost[] = [
     category: "Relocation",
     readTime: "7 min read",
     publishedAt: "May 15, 2026",
-    image: "/images/Comparing Local Public and Private Schools in Pensacola.png",
+    image: "/images/pensacola-schools-comparison.png",
     imageAlt: "Vibrant school environment in Pensacola with students engaged in educational activities",
     content: [
       "After 22 years working with families in Pensacola — including many relocation buyers for whom school choice is the first real filter — I've had this conversation more times than I can count. And my honest experience is that Pensacola has a genuinely strong educational landscape. The question is less \"is there a good school here\" and more \"which option fits our family best.\"",
@@ -1317,7 +1317,7 @@ export const blogPosts: BlogPost[] = [
     category: "Lifestyle",
     readTime: "5 min read",
     publishedAt: "May 9, 2026",
-    image: "/images/Best Fine Dining in Pensacola Area.png",
+    image: "/images/pensacola-fine-dining.png",
     imageAlt: "Luxurious fine dining setup in Pensacola with gourmet seafood dishes and elegant ambiance",
     content: [
       "One of the things I love telling buyers who are new to Pensacola is that the dining scene here is a genuine surprise. People arrive expecting a small Southern coastal city with a handful of reliable seafood spots. What they find is a culinary community that's creative, ingredient-focused, and deeply connected to the local fishing culture that makes Gulf Coast cooking so distinct.",

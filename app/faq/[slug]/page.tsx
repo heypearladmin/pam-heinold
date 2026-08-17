@@ -233,7 +233,7 @@ export default async function FAQPage({ params }: Props) {
       <JsonLd
         schema={breadcrumbSchema([
           { name: "Home", url: site.company.website },
-          { name: "Notes", url: `${site.company.website}/blog` },
+          { name: "Blog", url: `${site.company.website}/blog` },
           {
             name: faq.postTitle,
             url: `${site.company.website}/blog/${faq.postSlug}`,

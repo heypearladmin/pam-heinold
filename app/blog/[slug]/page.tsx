@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: Props) {
       <JsonLd
         schema={breadcrumbSchema([
           { name: "Home", url: site.company.website },
-          { name: "Notes", url: `${site.company.website}/blog` },
+          { name: "Blog", url: `${site.company.website}/blog` },
           { name: post.title, url: pageUrl },
         ])}
       />

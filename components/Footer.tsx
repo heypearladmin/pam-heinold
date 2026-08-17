@@ -47,6 +47,14 @@ export default function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link
+                href="/faq"
+                className="text-cream/85 hover:text-tan transition-colors duration-300"
+              >
+                FAQ
+              </Link>
+            </li>
           </ul>
         </div>
 

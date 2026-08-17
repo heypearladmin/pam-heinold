@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/neighborhoods", priority: 0.9, changeFrequency: "monthly" },
     { path: "/relocation", priority: 0.9, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.85, changeFrequency: "weekly" },
+    { path: "/faq", priority: 0.7, changeFrequency: "weekly" },
     { path: "/about", priority: 0.8, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
     { path: "/pensacola-real-estate", priority: 0.95, changeFrequency: "monthly" },
