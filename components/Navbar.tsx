@@ -11,6 +11,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [activeMenu, setActiveMenu] = useState<string | null>(null);
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false);
+  const [mobileNeighborhoodsOpen, setMobileNeighborhoodsOpen] = useState(false);
   const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
@@ -42,6 +43,7 @@ export default function Navbar() {
   const closeAll = () => {
     setOpen(false);
     setMobileServicesOpen(false);
+    setMobileNeighborhoodsOpen(false);
   };
 
   return (
@@ -80,75 +82,142 @@ export default function Navbar() {
         </Link>
 
         <ul className="hidden md:flex items-center gap-9">
-          {(site.nav as NavItem[]).map((item) =>
-            item.menu ? (
-              <li
-                key={item.href}
-                className="relative"
-                onMouseEnter={() => openMenu(item.label)}
-                onMouseLeave={scheduleClose}
-              >
-                <Link
-                  href={item.href}
-                  className="inline-flex items-center gap-1.5 text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
-                  aria-haspopup="true"
-                  aria-expanded={activeMenu === item.label}
-                  onFocus={() => openMenu(item.label)}
+          {(site.nav as NavItem[]).map((item) => {
+            if (item.menu) {
+              return (
+                <li
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => openMenu(item.label)}
+                  onMouseLeave={scheduleClose}
                 >
-                  {item.label}
-                  <span
-                    aria-hidden="true"
-                    className={`text-[0.6rem] transition-transform duration-300 ease-soft ${
-                      activeMenu === item.label ? "-rotate-180" : ""
+                  <Link
+                    href={item.href}
+                    className="inline-flex items-center gap-1.5 text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
+                    aria-haspopup="true"
+                    aria-expanded={activeMenu === item.label}
+                    onFocus={() => openMenu(item.label)}
+                  >
+                    {item.label}
+                    <span
+                      aria-hidden="true"
+                      className={`text-[0.6rem] transition-transform duration-300 ease-soft ${
+                        activeMenu === item.label ? "-rotate-180" : ""
+                      }`}
+                    >
+                      ▾
+                    </span>
+                  </Link>
+
+                  <div
+                    className={`absolute left-1/2 -translate-x-1/2 top-full pt-4 transition-all duration-200 ease-soft ${
+                      activeMenu === item.label
+                        ? "opacity-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 -translate-y-1 pointer-events-none"
                     }`}
                   >
-                    ▾
-                  </span>
-                </Link>
-
-                <div
-                  className={`absolute left-1/2 -translate-x-1/2 top-full pt-4 transition-all duration-200 ease-soft ${
-                    activeMenu === item.label
-                      ? "opacity-100 translate-y-0 pointer-events-auto"
-                      : "opacity-0 -translate-y-1 pointer-events-none"
-                  }`}
-                >
-                  <div className="w-[560px] bg-paper border border-tan/40 shadow-lg p-8 grid grid-cols-2 gap-10">
-                    {item.menu.map((col) => (
-                      <div key={col.heading}>
-                        <Link
-                          href={col.href}
-                          className="eyebrow text-warmbrown mb-4 block hover:text-nearblack transition-colors duration-300"
-                          onClick={() => setActiveMenu(null)}
-                        >
-                          {col.heading}
-                        </Link>
-                        <ul className="space-y-2.5">
-                          {col.links.map((link) => (
-                            <li key={link.href}>
-                              <Link
-                                href={link.href}
-                                className="text-[0.82rem] text-charcoal/80 hover:text-warmbrown transition-colors duration-300"
-                                onClick={() => setActiveMenu(null)}
-                              >
-                                {link.label}
-                              </Link>
-                            </li>
-                          ))}
-                        </ul>
-                        <Link
-                          href={col.href}
-                          className="mt-4 inline-block text-[0.7rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown/50 pb-0.5 hover:text-nearblack hover:border-nearblack transition-colors duration-300"
-                          onClick={() => setActiveMenu(null)}
-                        >
-                          {col.viewAllLabel} →
-                        </Link>
-                      </div>
-                    ))}
+                    <div className="w-[560px] bg-paper border border-tan/40 shadow-lg p-8 grid grid-cols-2 gap-10">
+                      {item.menu.map((col) => (
+                        <div key={col.heading}>
+                          <Link
+                            href={col.href}
+                            className="eyebrow text-warmbrown mb-4 block hover:text-nearblack transition-colors duration-300"
+                            onClick={() => setActiveMenu(null)}
+                          >
+                            {col.heading}
+                          </Link>
+                          <ul className="space-y-2.5">
+                            {col.links.map((link) => (
+                              <li key={link.href}>
+                                <Link
+                                  href={link.href}
+                                  className="text-[0.82rem] text-charcoal/80 hover:text-warmbrown transition-colors duration-300"
+                                  onClick={() => setActiveMenu(null)}
+                                >
+                                  {link.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                          <Link
+                            href={col.href}
+                            className="mt-4 inline-block text-[0.7rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown/50 pb-0.5 hover:text-nearblack hover:border-nearblack transition-colors duration-300"
+                            onClick={() => setActiveMenu(null)}
+                          >
+                            {col.viewAllLabel} →
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </li>
-            ) : (
+                </li>
+              );
+            }
+
+            if (item.simpleMenu) {
+              return (
+                <li
+                  key={item.href}
+                  className="relative"
+                  onMouseEnter={() => openMenu(item.label)}
+                  onMouseLeave={scheduleClose}
+                >
+                  <Link
+                    href={item.href}
+                    className="inline-flex items-center gap-1.5 text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
+                    aria-haspopup="true"
+                    aria-expanded={activeMenu === item.label}
+                    onFocus={() => openMenu(item.label)}
+                  >
+                    {item.label}
+                    <span
+                      aria-hidden="true"
+                      className={`text-[0.6rem] transition-transform duration-300 ease-soft ${
+                        activeMenu === item.label ? "-rotate-180" : ""
+                      }`}
+                    >
+                      ▾
+                    </span>
+                  </Link>
+
+                  <div
+                    className={`absolute left-1/2 -translate-x-1/2 top-full pt-4 transition-all duration-200 ease-soft ${
+                      activeMenu === item.label
+                        ? "opacity-100 translate-y-0 pointer-events-auto"
+                        : "opacity-0 -translate-y-1 pointer-events-none"
+                    }`}
+                  >
+                    <div className="w-[400px] bg-paper border border-tan/40 shadow-lg p-8">
+                      <p className="eyebrow text-warmbrown mb-5">
+                        {item.simpleMenu.sectionLabel}
+                      </p>
+                      <ul className="grid grid-cols-2 gap-x-8 gap-y-2.5">
+                        {item.simpleMenu.links.map((link) => (
+                          <li key={link.href}>
+                            <Link
+                              href={link.href}
+                              className="text-[0.82rem] text-charcoal/80 hover:text-warmbrown transition-colors duration-300"
+                              onClick={() => setActiveMenu(null)}
+                            >
+                              {link.label}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                      <Link
+                        href={item.simpleMenu.viewAllHref}
+                        className="mt-6 inline-block text-[0.7rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown/50 pb-0.5 hover:text-nearblack hover:border-nearblack transition-colors duration-300"
+                        onClick={() => setActiveMenu(null)}
+                      >
+                        {item.simpleMenu.viewAllLabel} →
+                      </Link>
+                    </div>
+                  </div>
+                </li>
+              );
+            }
+
+            return (
               <li key={item.href}>
                 <Link
                   href={item.href}
@@ -157,8 +226,8 @@ export default function Navbar() {
                   {item.label}
                 </Link>
               </li>
-            )
-          )}
+            );
+          })}
         </ul>
 
         <Link
@@ -183,62 +252,116 @@ export default function Navbar() {
       {open && (
         <div className="md:hidden border-t border-tan/40 bg-paper max-h-[calc(100vh-5rem)] overflow-y-auto">
           <ul className="px-6 py-6 space-y-5">
-            {(site.nav as NavItem[]).map((item) =>
-              item.menu ? (
-                <li key={item.href}>
-                  <button
-                    className="w-full flex items-center justify-between text-sm tracking-wider uppercase text-charcoal"
-                    aria-expanded={mobileServicesOpen}
-                    onClick={() => setMobileServicesOpen((v) => !v)}
-                  >
-                    {item.label}
-                    <span
-                      aria-hidden="true"
-                      className={`text-xs transition-transform duration-300 ease-soft ${
-                        mobileServicesOpen ? "-rotate-180" : ""
-                      }`}
+            {(site.nav as NavItem[]).map((item) => {
+              if (item.menu) {
+                return (
+                  <li key={item.href}>
+                    <button
+                      className="w-full flex items-center justify-between text-sm tracking-wider uppercase text-charcoal"
+                      aria-expanded={mobileServicesOpen}
+                      onClick={() => setMobileServicesOpen((v) => !v)}
                     >
-                      ▾
-                    </span>
-                  </button>
-
-                  {mobileServicesOpen && (
-                    <div className="mt-4 space-y-6 border-l border-tan/50 pl-4">
-                      <Link
-                        href={item.href}
-                        className="block text-xs tracking-wider uppercase text-warmbrown"
-                        onClick={closeAll}
+                      {item.label}
+                      <span
+                        aria-hidden="true"
+                        className={`text-xs transition-transform duration-300 ease-soft ${
+                          mobileServicesOpen ? "-rotate-180" : ""
+                        }`}
                       >
-                        All Services →
-                      </Link>
-                      {item.menu.map((col) => (
-                        <div key={col.heading}>
-                          <Link
-                            href={col.href}
-                            className="eyebrow text-warmbrown mb-3 block"
-                            onClick={closeAll}
-                          >
-                            {col.heading}
-                          </Link>
-                          <ul className="space-y-3">
-                            {col.links.map((link) => (
-                              <li key={link.href}>
-                                <Link
-                                  href={link.href}
-                                  className="block text-[0.83rem] text-charcoal/80"
-                                  onClick={closeAll}
-                                >
-                                  {link.label}
-                                </Link>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </li>
-              ) : (
+                        ▾
+                      </span>
+                    </button>
+
+                    {mobileServicesOpen && (
+                      <div className="mt-4 space-y-6 border-l border-tan/50 pl-4">
+                        <Link
+                          href={item.href}
+                          className="block text-xs tracking-wider uppercase text-warmbrown"
+                          onClick={closeAll}
+                        >
+                          All Services →
+                        </Link>
+                        {item.menu.map((col) => (
+                          <div key={col.heading}>
+                            <Link
+                              href={col.href}
+                              className="eyebrow text-warmbrown mb-3 block"
+                              onClick={closeAll}
+                            >
+                              {col.heading}
+                            </Link>
+                            <ul className="space-y-3">
+                              {col.links.map((link) => (
+                                <li key={link.href}>
+                                  <Link
+                                    href={link.href}
+                                    className="block text-[0.83rem] text-charcoal/80"
+                                    onClick={closeAll}
+                                  >
+                                    {link.label}
+                                  </Link>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </li>
+                );
+              }
+
+              if (item.simpleMenu) {
+                return (
+                  <li key={item.href}>
+                    <button
+                      className="w-full flex items-center justify-between text-sm tracking-wider uppercase text-charcoal"
+                      aria-expanded={mobileNeighborhoodsOpen}
+                      onClick={() => setMobileNeighborhoodsOpen((v) => !v)}
+                    >
+                      {item.label}
+                      <span
+                        aria-hidden="true"
+                        className={`text-xs transition-transform duration-300 ease-soft ${
+                          mobileNeighborhoodsOpen ? "-rotate-180" : ""
+                        }`}
+                      >
+                        ▾
+                      </span>
+                    </button>
+
+                    {mobileNeighborhoodsOpen && (
+                      <div className="mt-4 space-y-3 border-l border-tan/50 pl-4">
+                        <p className="eyebrow text-warmbrown mb-1">
+                          {item.simpleMenu.sectionLabel}
+                        </p>
+                        <ul className="space-y-3">
+                          {item.simpleMenu.links.map((link) => (
+                            <li key={link.href}>
+                              <Link
+                                href={link.href}
+                                className="block text-[0.83rem] text-charcoal/80"
+                                onClick={closeAll}
+                              >
+                                {link.label}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                        <Link
+                          href={item.simpleMenu.viewAllHref}
+                          className="block text-xs tracking-wider uppercase text-warmbrown pt-2"
+                          onClick={closeAll}
+                        >
+                          {item.simpleMenu.viewAllLabel} →
+                        </Link>
+                      </div>
+                    )}
+                  </li>
+                );
+              }
+
+              return (
                 <li key={item.href}>
                   <Link
                     href={item.href}
@@ -248,8 +371,8 @@ export default function Navbar() {
                     {item.label}
                   </Link>
                 </li>
-              )
-            )}
+              );
+            })}
             <li className="pt-2">
               <Link
                 href="/contact"

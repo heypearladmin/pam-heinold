@@ -1,3 +1,5 @@
+import { neighborhoods } from "@/lib/neighborhood-data";
+
 export interface NavLink {
   label: string;
   href: string;
@@ -10,8 +12,16 @@ export interface ServiceMenuColumn {
   links: NavLink[];
 }
 
+export interface SimpleNavMenu {
+  sectionLabel: string;
+  links: NavLink[];
+  viewAllLabel: string;
+  viewAllHref: string;
+}
+
 export interface NavItem extends NavLink {
   menu?: ServiceMenuColumn[];
+  simpleMenu?: SimpleNavMenu;
 }
 
 export const servicesMenu: ServiceMenuColumn[] = [
@@ -49,6 +59,16 @@ export const servicesMenu: ServiceMenuColumn[] = [
     ],
   },
 ];
+
+export const neighborhoodsMenu: SimpleNavMenu = {
+  sectionLabel: "Featured Neighborhoods",
+  links: neighborhoods.map((n) => ({
+    label: n.name,
+    href: `/neighborhoods/${n.slug}`,
+  })),
+  viewAllLabel: "View All Neighborhoods",
+  viewAllHref: "/neighborhoods",
+};
 
 export const site = {
   agent: {
@@ -91,7 +111,7 @@ export const site = {
   nav: [
     { label: "About", href: "/about" },
     { label: "Services", href: "/services", menu: servicesMenu },
-    { label: "Neighborhoods", href: "/neighborhoods" },
+    { label: "Neighborhoods", href: "/neighborhoods", simpleMenu: neighborhoodsMenu },
     { label: "Relocation", href: "/relocation" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
