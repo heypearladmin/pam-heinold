@@ -257,7 +257,7 @@ export default async function FAQPage({ params }: Props) {
               <li aria-hidden="true">/</li>
               <li>
                 <Link href="/blog" className="hover:text-warmbrown transition-colors duration-300">
-                  Notes
+                  Blog
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
@@ -459,7 +459,7 @@ export default async function FAQPage({ params }: Props) {
               id="related-articles-heading"
               className="font-display text-2xl md:text-3xl text-warmbrown mb-10 tracking-tight leading-tight"
             >
-              Related Notes
+              Related Articles
             </h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14">
               {relatedPosts.map((p) => (

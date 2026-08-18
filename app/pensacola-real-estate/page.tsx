@@ -140,18 +140,28 @@ export default function PensacolaRealEstatePage() {
             <p className="text-charcoal/80 leading-relaxed">
               Pam guides buyers through neighborhood selection, school research, commute planning, offer strategy, and every step to closing. Whether you are buying locally or relocating from out of state, the process is calm, clear, and unhurried.
             </p>
-            <Link href="/contact" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
-              Start the Conversation →
-            </Link>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <Link href="/services/buying" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
+                Explore the Buying Guide →
+              </Link>
+              <Link href="/contact" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
+                Start the Conversation →
+              </Link>
+            </div>
           </div>
           <div className="space-y-4">
             <h3 className="font-display text-2xl text-warmbrown">Selling a Home in Pensacola</h3>
             <p className="text-charcoal/80 leading-relaxed">
               Sellers benefit from Pam's 22 years of pricing insight, local buyer network, and professional marketing. No pressure, no inflated promises — just honest guidance and experienced execution from listing to close.
             </p>
-            <Link href="/contact" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
-              Get a Seller Consultation →
-            </Link>
+            <div className="flex flex-wrap gap-x-6 gap-y-2">
+              <Link href="/services/selling" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
+                Explore the Selling Guide →
+              </Link>
+              <Link href="/contact" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
+                Get a Seller Consultation →
+              </Link>
+            </div>
           </div>
         </div>
       </Section>

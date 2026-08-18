@@ -1,3 +1,55 @@
+export interface NavLink {
+  label: string;
+  href: string;
+}
+
+export interface ServiceMenuColumn {
+  heading: string;
+  href: string;
+  viewAllLabel: string;
+  links: NavLink[];
+}
+
+export interface NavItem extends NavLink {
+  menu?: ServiceMenuColumn[];
+}
+
+export const servicesMenu: ServiceMenuColumn[] = [
+  {
+    heading: "Buying",
+    href: "/services/buying",
+    viewAllLabel: "View All Buying",
+    links: [
+      { label: "Home Buying Guide", href: "/services/buying" },
+      { label: "First-Time Home Buyers", href: "/blog/first-time-homebuyer-guide-pensacola" },
+      { label: "Getting Pre-Approved", href: "/services/buying#getting-pre-approved" },
+      { label: "Finding the Right Home", href: "/services/buying#finding-the-right-home" },
+      { label: "Making an Offer", href: "/services/buying#making-an-offer" },
+      { label: "Home Inspections", href: "/services/buying#home-inspections" },
+      { label: "Closing Costs & Closing Day", href: "/services/buying#closing" },
+      { label: "New Construction", href: "/blog/new-construction-vs-existing-homes-pensacola" },
+      { label: "Luxury Home Buying", href: "/services/buying#luxury-home-buying" },
+    ],
+  },
+  {
+    heading: "Selling",
+    href: "/services/selling",
+    viewAllLabel: "View All Selling",
+    links: [
+      { label: "Home Selling Guide", href: "/services/selling" },
+      { label: "What's My Home Worth?", href: "/services/selling#whats-my-home-worth" },
+      { label: "Preparing Your Home for Sale", href: "/blog/biggest-seller-mistakes-before-listing-pensacola" },
+      { label: "Home Staging", href: "/services/selling#home-staging" },
+      { label: "Pricing Your Home", href: "/blog/why-pensacola-homes-sit-on-market" },
+      { label: "Marketing Your Home", href: "/services/selling#marketing-your-home" },
+      { label: "Understanding Offers", href: "/blog/what-buyers-expect-pensacola-sellers-2026" },
+      { label: "Negotiating Offers", href: "/services/selling#negotiating-offers" },
+      { label: "Closing the Sale", href: "/services/selling#closing-the-sale" },
+      { label: "Luxury Home Selling", href: "/blog/preparing-your-pensacola-home-for-luxury-market" },
+    ],
+  },
+];
+
 export const site = {
   agent: {
     firstName: "Pam",
@@ -38,11 +90,12 @@ export const site = {
   },
   nav: [
     { label: "About", href: "/about" },
+    { label: "Services", href: "/services", menu: servicesMenu },
     { label: "Neighborhoods", href: "/neighborhoods" },
     { label: "Relocation", href: "/relocation" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
-  ],
+  ] as NavItem[],
   /**
    * A2P 10DLC / GoHighLevel AI-dialer compliance copy.
    * Edit the brand string here and every consent surface updates in lockstep —

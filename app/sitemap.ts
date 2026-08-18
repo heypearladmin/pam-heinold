@@ -16,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const staticPages: Entry[] = [
     { path: "", priority: 1.0, changeFrequency: "weekly" },
+    { path: "/services", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/services/buying", priority: 0.92, changeFrequency: "monthly" },
+    { path: "/services/selling", priority: 0.92, changeFrequency: "monthly" },
     { path: "/neighborhoods", priority: 0.9, changeFrequency: "monthly" },
     { path: "/relocation", priority: 0.9, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.85, changeFrequency: "weekly" },

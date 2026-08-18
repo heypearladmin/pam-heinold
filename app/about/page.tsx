@@ -180,7 +180,7 @@ export default function AboutPage() {
         scriptAccent="I'd love to hear from you."
         body="A year out or actively looking — the best Pensacola decisions tend to start with the slowest, friendliest conversations."
         primaryCta={{ label: "Contact Pam", href: "/contact" }}
-        secondaryCta={{ label: "Read the Notes", href: "/blog" }}
+        secondaryCta={{ label: "Read the Blog", href: "/blog" }}
       />
     </>
   );

@@ -194,7 +194,7 @@ export default function HomePage() {
             href="/blog"
             className="inline-block text-[0.76rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300"
           >
-            Read All Notes →
+            Read All Blog Posts →
           </Link>
         </div>
       </Section>

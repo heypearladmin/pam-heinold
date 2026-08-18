@@ -18,7 +18,7 @@ export default function RelatedArticles({ post }: { post: BlogPost }) {
   return (
     <section className="py-20 md:py-28 bg-paper border-t border-tan/40">
       <div className="max-w-editorial mx-auto px-6 lg:px-10">
-        <p className="eyebrow text-charcoal/60 mb-10">Related Notes</p>
+        <p className="eyebrow text-charcoal/60 mb-10">Related Articles</p>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-14">
           {related.map((p) => (
             <BlogCard key={p.slug} post={p} />

@@ -21,6 +21,7 @@ import QuickAnswer from "@/components/blog/QuickAnswer";
 import TableOfContents from "@/components/blog/TableOfContents";
 import FAQCard from "@/components/blog/FAQCard";
 import RelatedArticles from "@/components/blog/RelatedArticles";
+import JourneyLinks from "@/components/blog/JourneyLinks";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -149,7 +150,7 @@ export default async function BlogPostPage({ params }: Props) {
                   href="/blog"
                   className="hover:text-warmbrown transition-colors duration-300"
                 >
-                  Notes
+                  Blog
                 </Link>
               </li>
               <li aria-hidden="true">/</li>
@@ -283,6 +284,9 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
         </div>
       </section>
+
+      {/* ── Buying/selling journey links ── */}
+      <JourneyLinks slug={post.slug} />
 
       {/* ── Related articles ── */}
       <RelatedArticles post={post} />
