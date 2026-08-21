@@ -2,7 +2,13 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   images: {
-    unoptimized: false,
+    // Vercel's on-demand Image Optimization returns 402
+    // OPTIMIZED_IMAGE_REQUEST_PAYMENT_REQUIRED once the account's included
+    // quota is exhausted, which breaks every <Image> on the site at once.
+    // Serving the (already-compressed) source files directly avoids that
+    // failure mode entirely. Re-enable only after confirming the Vercel
+    // account has headroom or a plan that includes Image Optimization.
+    unoptimized: true,
   },
   compress: true,
   async headers() {
