@@ -31,6 +31,8 @@ export const sellingJourneyLinks: JourneyLink[] = [
  * compact two-link version instead of the full journey list.
  */
 export const journeyBySlug: Record<string, "buying" | "selling" | "dual"> = {
+  "closing-costs-pensacola-guide": "buying",
+  "renting-vs-buying-pensacola-2026": "buying",
   "first-time-homebuyer-guide-pensacola": "buying",
   "what-being-ready-to-buy-means-pensacola": "buying",
   "what-changes-your-monthly-payment-pensacola": "buying",
