@@ -93,7 +93,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="inline-flex items-center gap-1.5 text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
+                    className="inline-flex items-center gap-1.5 whitespace-nowrap text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
                     aria-haspopup="true"
                     aria-expanded={activeMenu === item.label}
                     onFocus={() => openMenu(item.label)}
@@ -164,7 +164,7 @@ export default function Navbar() {
                 >
                   <Link
                     href={item.href}
-                    className="inline-flex items-center gap-1.5 text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
+                    className="inline-flex items-center gap-1.5 whitespace-nowrap text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
                     aria-haspopup="true"
                     aria-expanded={activeMenu === item.label}
                     onFocus={() => openMenu(item.label)}
@@ -221,7 +221,7 @@ export default function Navbar() {
               <li key={item.href}>
                 <Link
                   href={item.href}
-                  className="text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
+                  className="whitespace-nowrap text-[0.78rem] tracking-wider uppercase text-charcoal hover:text-warmbrown transition-colors duration-300"
                 >
                   {item.label}
                 </Link>

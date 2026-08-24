@@ -110,6 +110,7 @@ export const site = {
   },
   nav: [
     { label: "About", href: "/about" },
+    { label: "Market", href: "/pensacola-real-estate" },
     { label: "Services", href: "/services", menu: servicesMenu },
     { label: "Neighborhoods", href: "/neighborhoods", simpleMenu: neighborhoodsMenu },
     { label: "Relocation", href: "/relocation" },
