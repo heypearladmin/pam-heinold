@@ -11,7 +11,12 @@ export const metadata = {
   alternates: { canonical: "/contact" },
 };
 
-export default function ContactPage() {
+interface Props {
+  searchParams: Promise<{ intent?: string; source?: string }>;
+}
+
+export default async function ContactPage({ searchParams }: Props) {
+  const { intent, source } = await searchParams;
   const { company, social, agent } = site;
 
   return (
@@ -156,7 +161,7 @@ export default function ContactPage() {
             and respond within one business day.
           </p>
 
-          <ContactForm />
+          <ContactForm defaultIntent={intent} source={source} />
         </div>
       </section>
     </>

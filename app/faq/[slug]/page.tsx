@@ -13,6 +13,7 @@ import {
 import { breadcrumbSchema } from "@/lib/seo/schema";
 import { site } from "@/lib/site";
 import BlogCard from "@/components/BlogCard";
+import { journeyBySlug } from "@/lib/journey-links";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -482,7 +483,7 @@ export default async function FAQPage({ params }: Props) {
             pressure — just a friendly conversation.
           </p>
           <Link
-            href="/contact"
+            href={`/contact?intent=${["buying", "selling"].includes(journeyBySlug[faq.postSlug]) ? journeyBySlug[faq.postSlug] : "general"}&source=faq-${faq.slug}`}
             className="inline-block border border-warmbrown/40 text-warmbrown px-6 py-3 text-[0.76rem] tracking-wider uppercase hover:bg-warmbrown hover:text-cream transition-colors duration-300"
           >
             Begin a Conversation

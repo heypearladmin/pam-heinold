@@ -20,6 +20,14 @@ export async function submitContact(
   const consentNonMarketing = formData.get("consentNonMarketing") === "on";
   const consentMarketing    = formData.get("consentMarketing")    === "on";
 
+  // Which CTA sent this lead, and what they said they need — both optional,
+  // both default safely so older/simpler form callers keep working.
+  const ALLOWED_INTENTS = ["buying", "selling", "relocation", "neighborhood", "general"];
+  const rawIntent = (formData.get("intent") as string ?? "").trim();
+  const intent = ALLOWED_INTENTS.includes(rawIntent) ? rawIntent : "general";
+  const leadSource = (formData.get("source") as string ?? "").trim();
+  const message = (formData.get("message") as string ?? "").trim();
+
   if (!firstName) return { ok: false, error: "First name is required." };
   if (!lastName)  return { ok: false, error: "Last name is required." };
   if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -30,11 +38,11 @@ export async function submitContact(
   const apiKey = process.env.GHL_API_KEY;
 
   if (!apiKey) {
-    console.info("[contact] GHL_API_KEY not set:", { firstName, lastName, email, phone });
+    console.info("[contact] GHL_API_KEY not set:", { firstName, lastName, email, phone, intent, leadSource });
     return { ok: true };
   }
 
-  const tags = ["website-contact-form"];
+  const tags = ["website-contact-form", `cta-${intent}`];
   if (consentNonMarketing) tags.push("sms-consent-non-marketing");
   if (consentMarketing)    tags.push("sms-consent-marketing");
 
@@ -50,6 +58,9 @@ export async function submitContact(
       { key: "consent_non_marketing",  field_value: String(consentNonMarketing) },
       { key: "consent_marketing",      field_value: String(consentMarketing) },
       { key: "consent_version",        field_value: site.legal.consentVersion },
+      { key: "inquiry_intent",         field_value: intent },
+      { key: "lead_source_page",       field_value: leadSource || "direct" },
+      ...(message ? [{ key: "message", field_value: message }] : []),
     ],
   };
 

@@ -40,7 +40,7 @@ export default function HomePage() {
         subheadline="22 years of warm, refined Pensacola real estate guidance — from the historic streets of East Hill to the gated calm of Marcus Pointe and the quiet beauty of the Gulf."
         image="/images/hero-pensacola.jpg"
         imageAlt="Pensacola East Hill historic neighborhood at golden hour with mature oaks"
-        primaryCta={{ label: "Work With Pam", href: "/contact" }}
+        primaryCta={{ label: "Work With Pam", href: "/contact?source=home-hero" }}
         secondaryCta={{ label: "Explore Neighborhoods", href: "/neighborhoods" }}
       />
 
@@ -424,8 +424,8 @@ export default function HomePage() {
         title="A friendly conversation"
         scriptAccent="goes a long way."
         body="Whether you're a year out or weeks away, I'd be glad to hear what you're imagining. There's no rush, no pressure, and no obligation — just a warm Pensacola voice on the other end of the line."
-        primaryCta={{ label: "Reach Out", href: "/contact" }}
-        secondaryCta={{ label: "About Pam", href: "/about" }}
+        primaryCta={{ label: "Reach Out", href: "/contact?source=home-end" }}
+        secondaryCta={{ label: "Get Your Home Value", href: "/contact?intent=selling&source=home-end-value" }}
       />
     </>
   );

@@ -89,7 +89,7 @@ export default function FAQIndexPage() {
         title="There's no such thing as"
         scriptAccent="a silly question."
         body="If I haven't answered it yet, I'd genuinely love to. Reach out whenever it feels right — there's no pressure, and no commitment."
-        primaryCta={{ label: "Ask Pam", href: "/contact" }}
+        primaryCta={{ label: "Ask Pam", href: "/contact?source=faq-index-end" }}
         secondaryCta={{ label: "Read The Blog", href: "/blog" }}
       />
     </>

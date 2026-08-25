@@ -139,7 +139,7 @@ export default function ServicesPage() {
         title="No pressure,"
         scriptAccent="just a real conversation."
         body="Buying, selling, or just thinking it through — reach out whenever it feels right."
-        primaryCta={{ label: "Talk With Pam", href: "/contact" }}
+        primaryCta={{ label: "Talk With Pam", href: "/contact?source=services-hub-end" }}
         secondaryCta={{ label: "About Pam", href: "/about" }}
       />
     </>

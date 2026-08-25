@@ -2,6 +2,7 @@ import Link from "next/link";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import BlogCard from "@/components/BlogCard";
+import InlineCta from "@/components/InlineCta";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   breadcrumbSchema,
@@ -106,7 +107,7 @@ export default function BuyingServicesPage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/contact"
+              href="/contact?intent=buying&source=services-buying-hero"
               className="inline-block bg-warmbrown text-cream px-7 py-3.5 text-[0.78rem] tracking-wider uppercase hover:bg-nearblack transition-colors duration-300"
             >
               Start Your Home Search
@@ -179,6 +180,14 @@ export default function BuyingServicesPage() {
           </p>
         </div>
       </Section>
+
+      <InlineCta
+        eyebrow="Free Download"
+        title="Get the First-Time Buyer Guide"
+        body="Every step from pre-approval to closing day, written specifically for Pensacola — yours as a PDF, no email required."
+        cta={{ label: "Download the Guide", href: "/pdfs/first-time-homebuyer-guide-pensacola.pdf" }}
+        download
+      />
 
       <Section
         id="finding-the-right-home"
@@ -410,7 +419,7 @@ export default function BuyingServicesPage() {
         title="Let's find the home"
         scriptAccent="that feels like yours."
         body="No pressure, no rush — just an honest conversation about what you're looking for and where to find it in Pensacola."
-        primaryCta={{ label: "Start Your Home Search", href: "/contact" }}
+        primaryCta={{ label: "Start Your Home Search", href: "/contact?intent=buying&source=services-buying-end" }}
         secondaryCta={{ label: "Selling Instead?", href: "/services/selling" }}
       />
     </>

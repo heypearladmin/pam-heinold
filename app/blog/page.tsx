@@ -60,7 +60,7 @@ export default function BlogIndexPage() {
         title="Substance over noise,"
         scriptAccent="warmth over hype."
         body="When the timing is right, I'd love to hear what you're thinking about. There's no pressure in starting a quiet conversation."
-        primaryCta={{ label: "Reach Out", href: "/contact" }}
+        primaryCta={{ label: "Reach Out", href: "/contact?source=blog-index-end" }}
         secondaryCta={{ label: "Explore Neighborhoods", href: "/neighborhoods" }}
       />
     </>

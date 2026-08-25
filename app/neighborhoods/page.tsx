@@ -75,7 +75,7 @@ export default function NeighborhoodsIndexPage() {
         title="Pensacola is layered. I can help you find"
         scriptAccent="the layer that fits."
         body="If you have a neighborhood in mind that isn't listed — or no idea where to start — that's the conversation I love to have first."
-        primaryCta={{ label: "Talk With Pam", href: "/contact" }}
+        primaryCta={{ label: "Talk With Pam", href: "/contact?intent=neighborhood&source=neighborhoods-index" }}
         secondaryCta={{ label: "Relocation Guidance", href: "/relocation" }}
       />
     </>

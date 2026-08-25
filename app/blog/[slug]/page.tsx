@@ -22,6 +22,9 @@ import TableOfContents from "@/components/blog/TableOfContents";
 import FAQCard from "@/components/blog/FAQCard";
 import RelatedArticles from "@/components/blog/RelatedArticles";
 import JourneyLinks from "@/components/blog/JourneyLinks";
+import PdfDownloadCta from "@/components/blog/PdfDownloadCta";
+import { hasPdfGuide } from "@/lib/pdf-guides";
+import { journeyBySlug } from "@/lib/journey-links";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -103,6 +106,9 @@ export default async function BlogPostPage({ params }: Props) {
   const tocItems = extractTOCItems(post.content);
   const faqs = extractFAQs(post.content, post.slug, post.title);
   const mainContent = stripFAQSection(post.content);
+  const journey = journeyBySlug[post.slug];
+  const contactIntent = journey === "buying" || journey === "selling" ? journey : "general";
+  const contactHref = `/contact?intent=${contactIntent}&source=blog-${post.slug}`;
 
   return (
     <>
@@ -209,6 +215,10 @@ export default async function BlogPostPage({ params }: Props) {
                 ))}
               </article>
 
+              {hasPdfGuide(post.slug) && (
+                <PdfDownloadCta slug={post.slug} title={post.title} />
+              )}
+
               {faqs.length > 0 && (
                 <section
                   className="mt-16 pt-12 border-t border-tan/50"
@@ -275,7 +285,7 @@ export default async function BlogPostPage({ params }: Props) {
                 About Pam
               </Link>
               <Link
-                href="/contact"
+                href={contactHref}
                 className="inline-block bg-warmbrown text-cream px-6 py-3 text-[0.76rem] tracking-wider uppercase hover:bg-nearblack transition-colors duration-300"
               >
                 Begin a Conversation
@@ -301,7 +311,7 @@ export default async function BlogPostPage({ params }: Props) {
             glad to listen.
           </p>
           <Link
-            href="/contact"
+            href={contactHref}
             className="inline-block border border-warmbrown/40 text-warmbrown px-6 py-3 text-[0.76rem] tracking-wider uppercase hover:bg-warmbrown hover:text-cream transition-colors duration-300"
           >
             Begin a Quiet Conversation

@@ -146,7 +146,7 @@ export default async function NeighborhoodDetailPage({ params }: PageProps) {
         title={`Let's talk about ${n.name}`}
         scriptAccent="the way it deserves."
         body="Every neighborhood has nuances that don't show up in a listing photo or an online estimate. The conversation starts there."
-        primaryCta={{ label: "Reach Out", href: "/contact" }}
+        primaryCta={{ label: "Reach Out", href: `/contact?intent=neighborhood&source=neighborhood-${n.slug}` }}
         secondaryCta={{ label: "Other Neighborhoods", href: "/neighborhoods" }}
       />
 

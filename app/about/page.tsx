@@ -179,7 +179,7 @@ export default function AboutPage() {
         title="When the timing feels right,"
         scriptAccent="I'd love to hear from you."
         body="A year out or actively looking — the best Pensacola decisions tend to start with the slowest, friendliest conversations."
-        primaryCta={{ label: "Contact Pam", href: "/contact" }}
+        primaryCta={{ label: "Contact Pam", href: "/contact?source=about-end" }}
         secondaryCta={{ label: "Read the Blog", href: "/blog" }}
       />
     </>

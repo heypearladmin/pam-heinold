@@ -7,8 +7,26 @@ import { site } from "@/lib/site";
 
 const initialState: ContactResult | null = null;
 
-export default function ContactForm() {
+const REASON_OPTIONS = [
+  { value: "general", label: "Just have a question" },
+  { value: "buying", label: "Buying a home" },
+  { value: "selling", label: "Selling a home" },
+  { value: "relocation", label: "Relocating to Pensacola" },
+  { value: "neighborhood", label: "Learning about a neighborhood" },
+] as const;
+
+interface ContactFormProps {
+  /** Pre-selects the "How can I help?" option when a CTA links here with a known intent. */
+  defaultIntent?: string;
+  /** Identifies which page/CTA sent this lead, for lead-source tracking in GHL. */
+  source?: string;
+}
+
+export default function ContactForm({ defaultIntent, source }: ContactFormProps) {
   const [result, action, isPending] = useActionState(submitContact, initialState);
+  const initialReason = REASON_OPTIONS.some((o) => o.value === defaultIntent)
+    ? defaultIntent
+    : "general";
 
   const inputClass =
     "w-full bg-transparent border-b border-warmbrown/40 py-3 text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-warmbrown transition-colors duration-300";
@@ -107,6 +125,37 @@ export default function ContactForm() {
           />
         </label>
       </div>
+
+      <input type="hidden" name="source" value={source ?? ""} />
+
+      <label className="block">
+        <span className="eyebrow text-charcoal/60 block mb-2">
+          How Can I Help?
+        </span>
+        <select
+          name="intent"
+          defaultValue={initialReason}
+          className={`${inputClass} bg-paper cursor-pointer`}
+        >
+          {REASON_OPTIONS.map((opt) => (
+            <option key={opt.value} value={opt.value}>
+              {opt.label}
+            </option>
+          ))}
+        </select>
+      </label>
+
+      <label className="block">
+        <span className="eyebrow text-charcoal/60 block mb-2">
+          Anything Else I Should Know? <span className="normal-case text-charcoal/40">(optional)</span>
+        </span>
+        <textarea
+          name="message"
+          rows={3}
+          className={`${inputClass} resize-none`}
+          placeholder="Share as much or as little as you'd like."
+        />
+      </label>
 
       {/* Consent checkboxes — optional per A2P 10DLC dual-consent pattern. */}
       <fieldset className="mt-2 border border-warmbrown/20 bg-paper/60 p-5 sm:p-6 grid gap-4">

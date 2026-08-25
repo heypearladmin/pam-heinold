@@ -3,6 +3,7 @@ import { Vidaloka, Parisienne, Montserrat } from "next/font/google";
 import Script from "next/script";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import StickyCta from "@/components/StickyCta";
 import { realEstateAgentSchema, webSiteSchema, personSchema } from "@/lib/seo/schema";
 import "./globals.css";
 
@@ -120,6 +121,7 @@ export default function RootLayout({
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <StickyCta />
         <Script
           id="sa-dynamic-optimization"
           src="https://reports.heypearl.io/scripts/dynamic_optimization.js"

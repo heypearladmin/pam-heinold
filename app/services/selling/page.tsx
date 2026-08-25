@@ -2,6 +2,7 @@ import Link from "next/link";
 import Section from "@/components/Section";
 import CTASection from "@/components/CTASection";
 import BlogCard from "@/components/BlogCard";
+import InlineCta from "@/components/InlineCta";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   breadcrumbSchema,
@@ -104,13 +105,13 @@ export default function SellingServicesPage() {
           </p>
           <div className="mt-10 flex flex-wrap gap-4">
             <Link
-              href="/contact"
+              href="/contact?intent=selling&source=services-selling-hero-value"
               className="inline-block bg-warmbrown text-cream px-7 py-3.5 text-[0.78rem] tracking-wider uppercase hover:bg-nearblack transition-colors duration-300"
             >
               Get Your Home Value
             </Link>
             <Link
-              href="/contact"
+              href="/contact?intent=selling&source=services-selling-hero-talk"
               className="inline-block border border-warmbrown text-warmbrown px-7 py-3.5 text-[0.78rem] tracking-wider uppercase hover:bg-warmbrown hover:text-cream transition-colors duration-300"
             >
               Let&apos;s Talk About Selling
@@ -206,6 +207,14 @@ export default function SellingServicesPage() {
           </p>
         </div>
       </Section>
+
+      <InlineCta
+        eyebrow="Free Download"
+        title="Get the Seller's Guide"
+        body="The mistakes to avoid before you list, straight from 22 years of Pensacola listings — yours as a PDF, no email required."
+        cta={{ label: "Download the Guide", href: "/pdfs/biggest-seller-mistakes-before-listing-pensacola.pdf" }}
+        download
+      />
 
       <Section
         id="marketing-your-home"
@@ -377,7 +386,7 @@ export default function SellingServicesPage() {
         title="Let's talk about"
         scriptAccent="selling your home."
         body="A no-pressure conversation about your timeline, your goals, and what your home is really worth in today's Pensacola market."
-        primaryCta={{ label: "Let's Talk About Selling", href: "/contact" }}
+        primaryCta={{ label: "Let's Talk About Selling", href: "/contact?intent=selling&source=services-selling-end" }}
         secondaryCta={{ label: "Buying Instead?", href: "/services/buying" }}
       />
     </>

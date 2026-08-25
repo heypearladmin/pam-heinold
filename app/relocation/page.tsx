@@ -207,7 +207,7 @@ export default function RelocationPage() {
               anything else in the process.
             </p>
             <Link
-              href="/contact"
+              href="/contact?intent=relocation&source=relocation-mid"
               className="inline-block mt-4 text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300"
             >
               Begin a Relocation Conversation →
@@ -239,7 +239,7 @@ export default function RelocationPage() {
         title="The slower the start,"
         scriptAccent="the better the move."
         body="Whether you're a year out or weeks away, a quiet conversation now will save months later. I'd love to hear what you're imagining."
-        primaryCta={{ label: "Reach Out", href: "/contact" }}
+        primaryCta={{ label: "Reach Out", href: "/contact?intent=relocation&source=relocation-end" }}
         secondaryCta={{ label: "Explore Neighborhoods", href: "/neighborhoods" }}
       />
     </>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import CTASection from "@/components/CTASection";
 import Section from "@/components/Section";
+import GaLink from "@/components/GaLink";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   realEstateAgentSchema,
@@ -64,9 +65,9 @@ export default function PensacolaRealEstatePage() {
             across the country — this is the local guidance that makes it
             feel less like a transaction and more like a good decision.
           </p>
-          <div className="mt-10 flex flex-wrap gap-4">
+          <div className="mt-10 flex flex-wrap items-center gap-4">
             <Link
-              href="/contact"
+              href="/contact?source=pensacola-real-estate-hero"
               className="inline-block bg-warmbrown text-cream px-7 py-3.5 text-[0.78rem] tracking-wider uppercase hover:bg-nearblack transition-colors duration-300"
             >
               Talk With Pam
@@ -77,6 +78,14 @@ export default function PensacolaRealEstatePage() {
             >
               Explore Neighborhoods
             </Link>
+            <GaLink
+              href={site.company.phoneHref}
+              event="phone_click"
+              params={{ location: "pensacola-real-estate-hero" }}
+              className="text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300"
+            >
+              or call {site.company.phone}
+            </GaLink>
           </div>
         </div>
       </section>
@@ -144,7 +153,7 @@ export default function PensacolaRealEstatePage() {
               <Link href="/services/buying" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
                 Explore the Buying Guide →
               </Link>
-              <Link href="/contact" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
+              <Link href="/contact?intent=buying&source=pensacola-real-estate-buying-split" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
                 Start the Conversation →
               </Link>
             </div>
@@ -158,7 +167,7 @@ export default function PensacolaRealEstatePage() {
               <Link href="/services/selling" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
                 Explore the Selling Guide →
               </Link>
-              <Link href="/contact" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
+              <Link href="/contact?intent=selling&source=pensacola-real-estate-selling-split" className="inline-block text-[0.78rem] tracking-wider uppercase text-warmbrown border-b border-warmbrown pb-1 hover:text-nearblack hover:border-nearblack transition-colors duration-300">
                 Get a Seller Consultation →
               </Link>
             </div>
@@ -189,7 +198,7 @@ export default function PensacolaRealEstatePage() {
         title="22 years. One city."
         scriptAccent="Let's talk."
         body="Whether you are buying, selling, or just starting to think about it — a friendly conversation with Pam is the best first step."
-        primaryCta={{ label: "Contact Pam", href: "/contact" }}
+        primaryCta={{ label: "Contact Pam", href: "/contact?source=pensacola-real-estate-end" }}
         secondaryCta={{ label: "About Pam", href: "/about" }}
       />
     </>
