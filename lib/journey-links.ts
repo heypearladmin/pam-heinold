@@ -31,6 +31,7 @@ export const sellingJourneyLinks: JourneyLink[] = [
  * compact two-link version instead of the full journey list.
  */
 export const journeyBySlug: Record<string, "buying" | "selling" | "dual"> = {
+  "pensacola-rental-property-investment-guide": "buying",
   "closing-costs-pensacola-guide": "buying",
   "renting-vs-buying-pensacola-2026": "buying",
   "first-time-homebuyer-guide-pensacola": "buying",
@@ -42,6 +43,7 @@ export const journeyBySlug: Record<string, "buying" | "selling" | "dual"> = {
   "what-protects-home-value-pensacola": "buying",
   "pensacola-homeowners-insurance-guide": "buying",
 
+  "best-time-to-sell-house-pensacola": "selling",
   "biggest-seller-mistakes-before-listing-pensacola": "selling",
   "why-pensacola-homes-sit-on-market": "selling",
   "what-buyers-expect-pensacola-sellers-2026": "selling",
