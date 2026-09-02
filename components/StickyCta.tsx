@@ -31,7 +31,7 @@ function resolveContent(pathname: string): CtaContent | null {
   let category: Category = "general";
   let neighborhoodName: string | undefined;
 
-  if (pathname.startsWith("/services/buying")) {
+  if (pathname.startsWith("/services/buying") || pathname.startsWith("/listings")) {
     category = "buying";
   } else if (pathname.startsWith("/services/selling")) {
     category = "selling";

@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { site } from "@/lib/site";
 import { blogPosts } from "@/lib/blog-data";
 import { neighborhoods } from "@/lib/neighborhood-data";
+import { listings } from "@/lib/listing-data";
 import { getAllFAQs } from "@/lib/blog-utils";
 
 const base = site.company.website.replace(/\/$/, "");
@@ -20,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/services/buying", priority: 0.92, changeFrequency: "monthly" },
     { path: "/services/selling", priority: 0.92, changeFrequency: "monthly" },
     { path: "/neighborhoods", priority: 0.9, changeFrequency: "monthly" },
+    { path: "/listings", priority: 0.9, changeFrequency: "weekly" },
     { path: "/relocation", priority: 0.9, changeFrequency: "monthly" },
     { path: "/blog", priority: 0.85, changeFrequency: "weekly" },
     { path: "/faq", priority: 0.7, changeFrequency: "weekly" },
@@ -35,6 +37,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     changeFrequency: "monthly",
     priority: 0.85,
+  }));
+
+  const listingEntries: MetadataRoute.Sitemap = listings.map((l) => ({
+    url: `${base}/listings/${l.slug}`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.8,
   }));
 
   const blogEntries: MetadataRoute.Sitemap = blogPosts.map((p) => ({
@@ -60,5 +69,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   );
 
-  return [...staticEntries, ...neighborhoodEntries, ...blogEntries, ...faqEntries];
+  return [...staticEntries, ...neighborhoodEntries, ...listingEntries, ...blogEntries, ...faqEntries];
 }

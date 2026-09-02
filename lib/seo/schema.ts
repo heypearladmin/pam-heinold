@@ -199,6 +199,60 @@ export function blogPostingSchema(params: {
   });
 }
 
+export function listingSchema(params: {
+  name: string;
+  description: string;
+  url: string;
+  images: string[];
+  price: number;
+  address: { street: string; city: string; state: string; zip: string };
+  bedrooms: number;
+  bathrooms: number;
+  squareFeet: number;
+  status: string;
+}): SchemaObject {
+  const availability =
+    params.status === "Sold"
+      ? "https://schema.org/SoldOut"
+      : params.status === "Pending"
+      ? "https://schema.org/LimitedAvailability"
+      : "https://schema.org/InStock";
+
+  return withContext({
+    "@type": "SingleFamilyResidence",
+    "@id": `${params.url}#property`,
+    name: params.name,
+    description: params.description,
+    url: params.url,
+    image: params.images.map((img) =>
+      img.startsWith("http") ? img : `${base}${img}`
+    ),
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: params.address.street,
+      addressLocality: params.address.city,
+      addressRegion: params.address.state,
+      postalCode: params.address.zip,
+      addressCountry: "US",
+    },
+    numberOfRooms: params.bedrooms,
+    numberOfBedrooms: params.bedrooms,
+    numberOfBathroomsTotal: params.bathrooms,
+    floorSize: {
+      "@type": "QuantitativeValue",
+      value: params.squareFeet,
+      unitCode: "FTK",
+    },
+    offers: {
+      "@type": "Offer",
+      price: params.price,
+      priceCurrency: "USD",
+      availability,
+      seller: { "@id": `${base}/#agent` },
+    },
+  });
+}
+
 export function neighborhoodPageSchema(params: {
   title: string;
   description: string;

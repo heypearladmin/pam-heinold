@@ -113,6 +113,7 @@ export const site = {
     { label: "Market", href: "/pensacola-real-estate" },
     { label: "Services", href: "/services", menu: servicesMenu },
     { label: "Neighborhoods", href: "/neighborhoods", simpleMenu: neighborhoodsMenu },
+    { label: "Listings", href: "/listings" },
     { label: "Relocation", href: "/relocation" },
     { label: "Blog", href: "/blog" },
     { label: "Contact", href: "/contact" },
