@@ -91,7 +91,7 @@ export const site = {
     email: "pam@pamheinold.com",
     emailHref: "mailto:pam@pamheinold.com",
     hyperlocalArea: "Pensacola, FL",
-    website: "https://pamheinold.com",
+    website: "https://www.pamheinoldhomes.com",
   },
   social: {
     facebook: "https://www.facebook.com/PamHeinoldRealEstateExperts",

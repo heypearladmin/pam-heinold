@@ -76,7 +76,7 @@ export default async function ContactPage({ searchParams }: Props) {
                   rel="noopener noreferrer"
                   className="font-display text-2xl text-warmbrown link-underline break-words"
                 >
-                  pamheinold.com
+                  pamheinoldhomes.com
                 </a>
               </div>
             </div>

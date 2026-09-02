@@ -28,8 +28,8 @@ const sans = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pamheinold.com"),
-  alternates: { canonical: "https://pamheinold.com" },
+  metadataBase: new URL("https://www.pamheinoldhomes.com"),
+  alternates: { canonical: "https://www.pamheinoldhomes.com" },
   title: {
     default: "Pam Heinold | Pensacola Realtor & Real Estate Agent",
     template: "%s | Pam Heinold — Pensacola Realtor",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://pamheinold.com",
+    url: "https://www.pamheinoldhomes.com",
     siteName: "Pam Heinold | LPT Realty",
     title: "Let's find the place that feels like home.",
     description:
