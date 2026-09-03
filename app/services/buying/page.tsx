@@ -24,6 +24,7 @@ export const metadata = {
 const base = site.company.website;
 
 const resourceSlugs = [
+  "va-loan-guide-pensacola-military-buyers",
   "pensacola-rental-property-investment-guide",
   "first-time-homebuyer-guide-pensacola",
   "what-being-ready-to-buy-means-pensacola",
