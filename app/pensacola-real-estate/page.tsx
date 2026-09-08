@@ -4,7 +4,6 @@ import Section from "@/components/Section";
 import GaLink from "@/components/GaLink";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
-  realEstateAgentSchema,
   breadcrumbSchema,
   webPageSchema,
   faqPageSchema,
@@ -24,7 +23,6 @@ const base = site.company.website;
 export default function PensacolaRealEstatePage() {
   return (
     <>
-      <JsonLd schema={realEstateAgentSchema()} />
       <JsonLd schema={breadcrumbSchema([
         { name: "Home", url: base },
         { name: "Pensacola Real Estate", url: `${base}/pensacola-real-estate` },

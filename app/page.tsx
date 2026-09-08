@@ -35,7 +35,7 @@ export default function HomePage() {
       ])} />
       <Hero
         eyebrow="Pam Heinold · LPT Realty"
-        headline="Let's find the place that"
+        headline="Pensacola real estate — let's find the place that"
         scriptAccent="feels like home."
         subheadline="22 years of warm, refined Pensacola real estate guidance — from the historic streets of East Hill to the gated calm of Marcus Pointe and the quiet beauty of the Gulf."
         image="/images/hero-pensacola.jpg"

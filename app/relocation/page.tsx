@@ -29,7 +29,7 @@ export default function RelocationPage() {
       ])} />
       <Hero
         eyebrow="Relocating to Pensacola"
-        headline="The Gulf is patient."
+        headline="Moving to Pensacola? The Gulf is patient."
         scriptAccent="So am I."
         subheadline="22 years guiding families and luxury buyers through one of the warmest cities on the Gulf Coast. A friendly, thoughtful approach to making Pensacola feel like home."
         image="/images/relocation-hero.jpg"
