@@ -9,10 +9,44 @@ export type ContactResult =
   | { ok: true }
   | { ok: false; error: string };
 
+// Anti-spam thresholds for the time-trap below.
+const MIN_SUBMIT_MS = 2000; // faster than this is almost certainly a bot
+const MAX_SUBMIT_MS = 6 * 60 * 60 * 1000; // older than this is a stale/replayed page load
+
+/** Silent, generic success — spam is dropped without telling the caller why. */
+const FAKE_SUCCESS: ContactResult = { ok: true };
+
 export async function submitContact(
   _prev: ContactResult | null,
   formData: FormData
 ): Promise<ContactResult> {
+  // ── Bot gatekeeping — must happen before any real validation or GHL call ──
+
+  // Honeypot: real visitors never see or fill this field.
+  const honeypot = (formData.get("website") as string ?? "").trim();
+  if (honeypot) {
+    console.info("[contact] blocked: honeypot filled");
+    return FAKE_SUCCESS;
+  }
+
+  // Time-trap: the server independently computes elapsed time — a client
+  // "verified" flag is never trusted, since a bot can fabricate one.
+  const rawLoadedAt = formData.get("formLoadedAt") as string ?? "";
+  const loadedAt = Number(rawLoadedAt);
+  if (!rawLoadedAt || !Number.isFinite(loadedAt)) {
+    console.info("[contact] blocked: missing/invalid formLoadedAt");
+    return FAKE_SUCCESS;
+  }
+  const elapsed = Date.now() - loadedAt;
+  if (elapsed < MIN_SUBMIT_MS) {
+    console.info("[contact] blocked: submitted too fast", { elapsed });
+    return FAKE_SUCCESS;
+  }
+  if (elapsed > MAX_SUBMIT_MS) {
+    console.info("[contact] blocked: stale form load", { elapsed });
+    return FAKE_SUCCESS;
+  }
+
   const firstName = (formData.get("firstName") as string ?? "").trim();
   const lastName  = (formData.get("lastName")  as string ?? "").trim();
   const email     = (formData.get("email")     as string ?? "").trim();

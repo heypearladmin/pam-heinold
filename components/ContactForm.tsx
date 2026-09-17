@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useActionState } from "react";
+import { useActionState, useState } from "react";
 import { submitContact, type ContactResult } from "@/app/actions/contact";
 import { site } from "@/lib/site";
 
@@ -27,6 +27,10 @@ export default function ContactForm({ defaultIntent, source }: ContactFormProps)
   const initialReason = REASON_OPTIONS.some((o) => o.value === defaultIntent)
     ? defaultIntent
     : "general";
+  // Recorded once, when the form first mounts — the server independently
+  // checks elapsed time against this to reject bot submissions that fire
+  // near-instantly. Never trust a client-side "human" flag instead.
+  const [formLoadedAt] = useState(() => Date.now());
 
   const inputClass =
     "w-full bg-transparent border-b border-warmbrown/40 py-3 text-charcoal placeholder:text-charcoal/40 focus:outline-none focus:border-warmbrown transition-colors duration-300";
@@ -127,6 +131,28 @@ export default function ContactForm({ defaultIntent, source }: ContactFormProps)
       </div>
 
       <input type="hidden" name="source" value={source ?? ""} />
+      <input type="hidden" name="formLoadedAt" value={formLoadedAt} />
+
+      {/* Honeypot — invisible to real visitors, left off-screen (not display:none)
+          so simple bots that only check computed visibility still fill it in. */}
+      <div
+        aria-hidden="true"
+        style={{
+          position: "absolute",
+          left: "-9999px",
+          top: "-9999px",
+          width: "1px",
+          height: "1px",
+          overflow: "hidden",
+        }}
+      >
+        <input
+          type="text"
+          name="website"
+          tabIndex={-1}
+          autoComplete="off"
+        />
+      </div>
 
       <label className="block">
         <span className="eyebrow text-charcoal/60 block mb-2">
