@@ -47,6 +47,7 @@ export const journeyBySlug: Record<string, "buying" | "selling" | "dual"> = {
   "what-protects-home-value-pensacola": "buying",
   "pensacola-homeowners-insurance-guide": "buying",
 
+  "pensacola-home-value-2026": "selling",
   "best-time-to-sell-house-pensacola": "selling",
   "biggest-seller-mistakes-before-listing-pensacola": "selling",
   "why-pensacola-homes-sit-on-market": "selling",

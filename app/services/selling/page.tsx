@@ -24,6 +24,7 @@ export const metadata = {
 const base = site.company.website;
 
 const resourceSlugs = [
+  "pensacola-home-value-2026",
   "best-time-to-sell-house-pensacola",
   "biggest-seller-mistakes-before-listing-pensacola",
   "why-pensacola-homes-sit-on-market",
