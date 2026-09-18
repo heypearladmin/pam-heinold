@@ -24,6 +24,8 @@ export const metadata = {
 const base = site.company.website;
 
 const resourceSlugs = [
+  "pensacola-condo-buying-guide-florida-laws",
+  "best-time-to-buy-house-pensacola",
   "va-loan-guide-pensacola-military-buyers",
   "pensacola-rental-property-investment-guide",
   "first-time-homebuyer-guide-pensacola",
