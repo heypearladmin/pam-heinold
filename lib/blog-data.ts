@@ -12,6 +12,72 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  // ── New articles (October 2026, fifth wave) ─────────────────────────────────
+  {
+    slug: "pensacola-beach-neighborhood-guide",
+    title: "Pensacola Beach: A Neighborhood Guide to Gulf-Front Island Living",
+    excerpt:
+      "It's the most social, most central stretch of Gulf Coast in our market — and the one place where a genuinely year-round community lives right on the sand. Here's what living there actually looks like.",
+    category: "Hyperlocal",
+    readTime: "8 min read",
+    publishedAt: "October 17, 2026",
+    isNew: true,
+    image: "/images/website-blog-pensacola-beach-guide.webp",
+    imageAlt: "Pensacola Beach shoreline with white sand, turquoise water, and beach homes at golden hour",
+    content: [
+      "## What Makes Pensacola Beach Different",
+      "Of all the water in our market — the bayous, Perdido Key, the Sound — Pensacola Beach is the one place where island life genuinely feels like a neighborhood rather than a vacation. It sits on Santa Rosa Island, connected to the mainland by the Bob Sikes Bridge, and it's built around a real center of gravity: the Boardwalk. That's the difference most people don't expect until they've spent time here.",
+      "## The Lifestyle: Social, Central, Genuinely Year-Round",
+      "This isn't a beach town that empties out after Labor Day. Pensacola Beach has a real, permanent resident population that treats the Boardwalk's restaurants, live music, and marina as their actual social life, not a tourist backdrop. Mornings on the sand, afternoons on the water, evenings that end up at the Boardwalk more often than not — the rhythm here runs twelve months a year, even if the crowd thins out in January.",
+      "## The Real Estate: Single-Family, Condos, and Everything Between",
+      "Housing stock is genuinely varied — single-family beach homes, Gulf-front and bay-front condos, and everything in between, which means the price range here is wider than people expect before they start looking. Value drivers are straightforward: Gulf frontage versus beach access, elevation, and proximity to the Boardwalk all carry real, specific premiums.",
+      "If a condo is part of your search, know that Florida's post-2021 condo laws around milestone inspections and reserve funding apply to Pensacola Beach buildings just like anywhere else in the state — worth understanding before you fall for a specific unit.",
+      "## The Boardwalk and What Anchors the Island",
+      "The Boardwalk is the actual center of daily life here — restaurants, live music, the marina, and a walkable core that gives the island a sense of place most barrier islands don't have. It's also a short drive to Gulf Islands National Seashore for the quieter stretches, and across the bridge to downtown Pensacola in well under twenty minutes.",
+      "## Who Pensacola Beach Actually Attracts",
+      "Primary residents who genuinely want to live on the water year-round, not just visit it. Second-home buyers who want a real base rather than a rental-only property. Investors drawn to strong, consistent vacation-rental demand given the tourism draw. What unites them is wanting the social, central version of Gulf Coast living — buyers chasing total seclusion usually end up looking at Perdido Key instead.",
+      "## The Trade-Offs Worth Knowing",
+      "Insurance is the honest conversation every Gulf-front buyer needs to have early — wind, flood, and elevation all factor into cost, and it's genuinely more than a comparable inland home. Traffic on the Bob Sikes Bridge can back up during peak summer weekends and around major storms. And short-term rental rules vary by specific property and HOA, so never assume rental income potential without confirming the actual rules for that address.",
+      "## Is Pensacola Beach Right for You?",
+      "If you want beach living with restaurants, a marina, and neighbors within walking distance — and you're comfortable with more seasonal energy and tourism infrastructure than a quieter island — Pensacola Beach is usually the right answer. If total seclusion matters more than social access, it's worth touring Perdido Key alongside it before deciding.",
+      "## Frequently Asked Questions About Pensacola Beach",
+      "**Is Pensacola Beach a good place to live year-round?**\nYes — unlike many beach destinations, Pensacola Beach has a genuine, permanent resident community that stays active through the offseason, not just a summer tourist population. The Boardwalk and its restaurants and events run year-round.",
+      "**What's the flood insurance situation like on Pensacola Beach?**\nFlood insurance is a real and necessary cost for nearly every Pensacola Beach property, and pricing varies significantly by specific elevation and construction age. Get an actual quote for any property you're seriously considering rather than estimating based on the island alone.",
+      "**Is Pensacola Beach walkable?**\nThe area immediately around the Boardwalk is walkable — restaurants, shops, and the marina are all within an easy walk of nearby homes and condos. Farther-out stretches of the island are more driving- or biking-oriented.",
+    ],
+  },
+  {
+    slug: "winning-multiple-offer-situation-pensacola",
+    title: "How to Win a Multiple-Offer Situation in Pensacola",
+    excerpt:
+      "The highest price doesn't always win — and the buyers who understand that walk away with the house more often than the ones throwing the biggest number at it. Here's how competitive offers actually get chosen.",
+    category: "Buyer Guide",
+    readTime: "7 min read",
+    publishedAt: "October 12, 2026",
+    isNew: true,
+    image: "/images/website-blog-multiple-offer-pensacola.webp",
+    imageAlt: "Buyer and real estate agent reviewing an offer document together at a Pensacola home",
+    content: [
+      "## Why Multiple-Offer Situations Happen in Pensacola",
+      "Well-priced, well-prepared homes in strong-demand pockets — East Hill, Marcus Pointe, Nature Trail, anything genuinely move-in ready near a good school — still draw multiple offers here, particularly during spring and early summer. It's not the frenzy some other markets see, but it's real enough that buyers who don't know how to compete lose homes they were qualified to buy.",
+      "## What Actually Wins: It's Not Always the Highest Price",
+      "Sellers and their agents are weighing more than the number on page one. Financing strength, contingency terms, closing timeline flexibility, and how clean and low-drama the offer looks all factor into which one gets accepted — a listing agent has seen enough deals fall apart to be genuinely cautious about an offer that looks great on price but shaky everywhere else.",
+      "## Escalation Clauses: What They Are and When to Use One",
+      "An escalation clause automatically increases your offer by a set increment above any competing offer, up to a maximum you set — it lets you compete without guessing blindly at the highest number. Used well, it signals seriousness without you having to overpay when there's no actual competition. Used poorly (a low cap, an obvious increment), it can tip your hand to a savvy listing agent. This is a tool to use with guidance, not a template to fill in alone.",
+      "## Covering an Appraisal Gap",
+      "If the home appraises below your offer price, a gap-coverage commitment — agreeing in advance to cover some or all of the difference in cash — tells the seller your offer won't collapse over an appraisal shortfall. This matters most with financed offers competing against cash, where appraisal risk is the seller's biggest concern.",
+      "## Clean Terms Beat Complicated Terms",
+      "A shorter, more flexible closing timeline, a larger earnest money deposit, and fewer or better-defined contingencies all make an offer easier for a seller to say yes to. This doesn't mean waiving protections you actually need — it means removing friction you don't. A knowledgeable agent can tell you which terms genuinely matter to a specific seller and which ones are just noise.",
+      "## What About Waiving Inspections?",
+      "I'm cautious here, and I tell every buyer the same thing: waiving your right to inspect entirely is rarely worth the risk, especially in a coastal market where roof age, prior water intrusion, and system condition carry real financial weight. A better middle ground is often an inspection for information only — you keep the right to know what you're buying, without the leverage to renegotiate or walk over minor items. Talk through the specific home and situation before deciding what to waive.",
+      "## What I Tell Every Buyer Before We Compete",
+      "Get fully underwritten, not just pre-qualified, before you're competing for a specific home — it's the single biggest credibility signal you can offer a seller. Decide your real ceiling before you're emotionally attached to a specific house, not during the counteroffer. And trust the agent representing you to tell you honestly when a term isn't worth the risk, even if it costs you the house — a home you regret winning isn't actually a win.",
+      "## Frequently Asked Questions About Multiple-Offer Situations in Pensacola",
+      "**What is an escalation clause and should I use one in Pensacola?**\nAn escalation clause automatically raises your offer above competing bids up to a maximum you set, letting you compete without guessing at the highest number. It can be effective in genuine multiple-offer situations, but it's worth using with an agent's guidance so the cap and increment are set strategically, not guessed at.",
+      "**Should I waive my home inspection to win a Pensacola home?**\nGenerally, no — waiving inspection entirely carries real risk, particularly with coastal factors like roof age and prior water intrusion. An inspection-for-information-only approach often gives you a middle ground: you keep visibility into the home's condition without the leverage to renegotiate over minor items.",
+      "**How much over asking price should I offer in a competitive Pensacola market?**\nThere's no universal formula — it depends on how the home was priced relative to comparable sales, how many competing offers exist, and your own ceiling. Offering well above asking on an already-aggressively-priced home can mean overpaying regardless of competition. A comparative market analysis before you offer is more useful than guessing at a round number.",
+    ],
+  },
   // ── New articles (October 2026, fourth wave) ────────────────────────────────
   {
     slug: "downtown-pensacola-neighborhood-guide",
@@ -21,7 +87,6 @@ export const blogPosts: BlogPost[] = [
     category: "Hyperlocal",
     readTime: "7 min read",
     publishedAt: "October 7, 2026",
-    isNew: true,
     image: "/images/website-blog-downtown-pensacola-guide.webp",
     imageAlt: "Historic downtown Pensacola street on Palafox with restored storefronts and palm trees",
     content: [
@@ -54,7 +119,6 @@ export const blogPosts: BlogPost[] = [
     category: "Seller Strategy",
     readTime: "7 min read",
     publishedAt: "October 2, 2026",
-    isNew: true,
     image: "/images/website-blog-pensacola-home-value-2026.webp",
     imageAlt: "Pensacola homeowner reviewing paperwork at a kitchen table with a laptop open",
     content: [
