@@ -12,6 +12,72 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  // ── New articles (October 2026, sixth wave) ─────────────────────────────────
+  {
+    slug: "perdido-key-neighborhood-guide",
+    title: "Perdido Key: A Neighborhood Guide to Quiet, Protected Gulf-Front Living",
+    excerpt:
+      "Perdido Key is the Gulf Coast's quiet side — a barrier island where protected shoreline does the work of keeping things calm. Here's what living there actually looks like, and who it fits best.",
+    category: "Hyperlocal",
+    readTime: "8 min read",
+    publishedAt: "October 27, 2026",
+    isNew: true,
+    image: "/images/website-blog-perdido-key-guide.webp",
+    imageAlt: "Quiet Perdido Key shoreline with white sand dunes and sea oats at sunrise",
+    content: [
+      "## What Makes Perdido Key Different",
+      "Cross onto Perdido Key and you feel the change almost immediately. The pace slows, the traffic thins, and the shoreline opens up. Much of the island borders Gulf Islands National Seashore, and that protected land is the quiet reason this place feels the way it does — it limits how much can ever be built, which keeps density low in a way that's hard to replicate on other Gulf Coast islands.",
+      "## The Lifestyle: Slow Mornings, Open Water, Real Privacy",
+      "Daily life here is organized around the water and the quiet. Early walks on the sand before anyone else is out, afternoons on a boat or a paddleboard, long dinners that don't require a reservation strategy. There's no Boardwalk-style commercial center, and residents tend to like it that way. People here know their neighbors without anyone needing to make it loud.",
+      "## The Real Estate: Beachfront Homes and a Curated Condo Mix",
+      "Housing leans toward beachfront and beach-access single-family homes, alongside a smaller, more curated group of condominiums than you'll find on Pensacola Beach. Inventory is smaller overall, and the most desirable properties sometimes change hands quietly. Beachfront frontage and elevation drive long-term value, and because supply is naturally limited, scarcity does a lot of the work.",
+      "If a condo is on your list, Florida's post-2021 condo laws on milestone inspections and reserve funding apply here too — review a building's reserve study and recent board minutes before you fall for a specific unit.",
+      "## What Anchors the Island",
+      "The draw is the shoreline itself — protected stretches of Gulf Islands National Seashore, quiet beaches, and waterfront dining and boating along the Intracoastal side. It's a longer drive to downtown Pensacola than from Pensacola Beach, which is part of why the island feels like its own world.",
+      "## Who Perdido Key Actually Attracts",
+      "Primary residents who want the Gulf without the crowd. Second-home buyers looking for a genuinely restful base. Buyers with the flexibility to work remotely or who've already retired and don't need a short daily commute. What they share is a preference for privacy and calm over walkable dining and nightlife.",
+      "## The Trade-Offs Worth Knowing",
+      "Perdido Key is more driving-oriented than Pensacola Beach — groceries, medical care, and most services mean a car trip. Insurance is a real cost for any Gulf-front property, with wind, flood, and elevation all in play, so get an actual quote early. And short-term rental rules vary by specific property and HOA, so confirm them for any address before counting on rental income.",
+      "## Is Perdido Key Right for You?",
+      "If you want the Gulf at its quietest and you're comfortable driving for most errands, Perdido Key is often the answer. If you'd rather have restaurants, a marina, and neighbors within walking distance, tour Pensacola Beach alongside it before you decide — a comparison I'm glad to walk with you in person.",
+      "## Frequently Asked Questions About Perdido Key",
+      "**Is Perdido Key quieter than Pensacola Beach?**\nYes. A significant portion of the island borders Gulf Islands National Seashore, which limits development and keeps density and traffic noticeably lower, especially in peak season.",
+      "**What kinds of homes are on Perdido Key?**\nMostly beachfront and beach-access single-family homes plus a smaller, curated selection of condominiums. Inventory is more limited than on Pensacola Beach, and the best properties often sell quietly.",
+      "**Is flood insurance required on Perdido Key?**\nMost Gulf-front and low-elevation properties require flood coverage, and cost varies widely by elevation and construction age. Get a quote for the specific property rather than estimating from the island alone.",
+    ],
+  },
+  {
+    slug: "selling-your-pensacola-home-without-an-agent",
+    title: "Selling Your Pensacola Home Without an Agent: What You're Really Taking On",
+    excerpt:
+      "For-sale-by-owner can work, but the commission you save isn't the whole equation. Here's an honest look at what you take on when you sell your Pensacola home yourself.",
+    category: "Seller Strategy",
+    readTime: "7 min read",
+    publishedAt: "October 22, 2026",
+    isNew: true,
+    image: "/images/website-blog-selling-without-an-agent-pensacola.webp",
+    imageAlt: "Pensacola homeowner placing a for-sale-by-owner sign in the front yard",
+    content: [
+      "## Can You Sell Your Pensacola Home Without an Agent?",
+      "Yes, you can — and some people do it successfully. If you're weighing it, I'd rather you make the decision with a clear view of the work involved than find out halfway through. I'm a REALTOR®, so I have an obvious perspective here, and I'll tell you where selling yourself genuinely makes sense along with where it gets difficult.",
+      "## What You're Taking On",
+      "A listing agent handles a long list of things you'd now do yourself: pricing the home accurately, professional photography and marketing, getting the listing in front of buyers and their agents, scheduling and hosting showings, screening buyers for real financing, negotiating offers, and managing the contract through inspection, appraisal, and closing. None of it is impossible. All of it takes time, and mistakes in any one step can be expensive.",
+      "## Pricing Is the Hardest Part",
+      "Without access to current comparable sales and a feel for your specific neighborhood, it's easy to price too high and let the home sit, or too low and leave money behind. Online estimates are a rough starting point only, and they miss condition, flood zone status, and neighborhood-specific value drivers. Pricing accurately is usually where an experienced agent earns their fee.",
+      "## Exposure and Buyer Agents",
+      "Most buyers work with an agent, and many search through the MLS. A home that isn't listed there can be invisible to a large share of the buyers who'd otherwise see it. Some FSBO sellers pay a flat fee to list on the MLS, which helps visibility but doesn't replace the rest of the work.",
+      "## Contracts, Disclosures, and Legal Risk",
+      "Florida has specific disclosure obligations, and the purchase contract has contingencies, deadlines, and remedies that matter a great deal if a deal hits trouble. A missed disclosure or a poorly written term can create real liability after closing. If you sell on your own, have a real estate attorney or title company review the contract.",
+      "## When Selling Yourself Can Make Sense",
+      "It tends to work best when you already have a buyer in mind — a neighbor, a relative, a tenant — or when the home is in unusually high demand and priced well. Even then, the paperwork and negotiation deserve professional eyes.",
+      "## What I Actually Tell Sellers",
+      "Don't decide on commission alone. Compare what you'd likely net each way, including the cost of your time, the risk of underpricing, and the chance of a deal falling apart. If you want, I'll give you a free, no-obligation valuation so you're comparing real numbers, and you can decide from there. Plenty of people take the valuation and still choose to sell on their own, and that's fine.",
+      "## Frequently Asked Questions About Selling Without an Agent in Pensacola",
+      "**Is it legal to sell my house without a real estate agent in Florida?**\nYes. Florida homeowners can sell their own property. You remain responsible for required disclosures and for a properly written contract, so having an attorney or title company review the paperwork is strongly advisable.",
+      "**Will I really save money selling without an agent?**\nYou avoid paying a listing commission, but you may still owe a buyer's agent fee, and you take on the cost of marketing, your time, and the risk of mispricing. Whether you come out ahead depends on how accurately you price and how well the sale goes.",
+      "**How do I find out what my home is worth before deciding?**\nAn online estimate gives a rough range, but a comparative market analysis from a local agent is far more accurate. It's typically free and carries no obligation to list.",
+    ],
+  },
   // ── New articles (October 2026, fifth wave) ─────────────────────────────────
   {
     slug: "pensacola-beach-neighborhood-guide",
@@ -21,7 +87,6 @@ export const blogPosts: BlogPost[] = [
     category: "Hyperlocal",
     readTime: "8 min read",
     publishedAt: "October 17, 2026",
-    isNew: true,
     image: "/images/website-blog-pensacola-beach-guide.webp",
     imageAlt: "Pensacola Beach shoreline with white sand, turquoise water, and beach homes at golden hour",
     content: [
@@ -54,7 +119,6 @@ export const blogPosts: BlogPost[] = [
     category: "Buyer Guide",
     readTime: "7 min read",
     publishedAt: "October 12, 2026",
-    isNew: true,
     image: "/images/website-blog-multiple-offer-pensacola.webp",
     imageAlt: "Buyer and real estate agent reviewing an offer document together at a Pensacola home",
     content: [
