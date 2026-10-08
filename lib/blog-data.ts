@@ -22,8 +22,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "8 min read",
     publishedAt: "October 27, 2026",
     isNew: true,
-    image: "/images/website-blog-perdido-key-guide.webp",
-    imageAlt: "Quiet Perdido Key shoreline with white sand dunes and sea oats at sunrise",
+    image: "/images/neighborhood-perdido-key.jpg",
+    imageAlt: "Perdido Key beach home overlooking white sand and calm Gulf water",
     content: [
       "## What Makes Perdido Key Different",
       "Cross onto Perdido Key and you feel the change almost immediately. The pace slows, the traffic thins, and the shoreline opens up. Much of the island borders Gulf Islands National Seashore, and that protected land is the quiet reason this place feels the way it does — it limits how much can ever be built, which keeps density low in a way that's hard to replicate on other Gulf Coast islands.",
@@ -55,8 +55,8 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min read",
     publishedAt: "October 22, 2026",
     isNew: true,
-    image: "/images/website-blog-selling-without-an-agent-pensacola.webp",
-    imageAlt: "Pensacola homeowner placing a for-sale-by-owner sign in the front yard",
+    image: "/images/website-blog-best-time-to-sell-pensacola.webp",
+    imageAlt: "Pensacola home with a for-sale sign in the front yard on a bright spring afternoon",
     content: [
       "## Can You Sell Your Pensacola Home Without an Agent?",
       "Yes, you can — and some people do it successfully. If you're weighing it, I'd rather you make the decision with a clear view of the work involved than find out halfway through. I'm a REALTOR®, so I have an obvious perspective here, and I'll tell you where selling yourself genuinely makes sense along with where it gets difficult.",
